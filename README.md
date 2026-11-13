@@ -15,7 +15,7 @@ Discover your AI models , agents, and associated resources security.
 Identify risks across AI application supply chains/piplines and agents - that can lead to data exfiltration and misuse of resources.
 Implement proper governance controls around AI usage.
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![Language](https://img.shields.io/badge/language-python-yellow) [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Pramath-Ramekar/aispm-mvp-v1/) ![OBS package build status](https://img.shields.io/obs/openSUSE%3ATools/osc/Debian_11/x86_64)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![Language](https://img.shields.io/badge/language-python-yellow) [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Pramath-Ramekar/aispm-mvp-v1/) ![OBS package build status](https://img.shields.io/obs/openSUSE%3ATools/osc/Debian_11/x86_64)
 
 <div align="center">
 <h1>AISPM MVP v1</h1>
