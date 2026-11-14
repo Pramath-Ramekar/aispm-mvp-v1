@@ -161,28 +161,28 @@ function PostureGauge({ score = 83 }) {
     <div className="flex flex-col items-center justify-center h-full">
       <svg width="144" height="120" viewBox="0 0 144 120">
         {/* Track */}
-        <path d={trackPath} fill="none" stroke="#f3f4f6" strokeWidth="12" strokeLinecap="round" />
-        <path d={trackPath} fill="none" stroke="#e6e6ec" strokeWidth="10" strokeLinecap="round" />
+        <path d={trackPath} fill="none" stroke="#2a2236" strokeWidth="12" strokeLinecap="round" />
+        <path d={trackPath} fill="none" stroke="#2a2236" strokeWidth="10" strokeLinecap="round" />
         {/* Fill with glow */}
         <path d={fillPath} fill="none" stroke={scoreColor} strokeWidth="10" strokeLinecap="round"
           style={{ filter: `drop-shadow(0 0 6px ${scoreColor}66)` }} />
         {/* Endpoint ticks */}
-        <circle cx={tx0} cy={ty0} r="4" fill="#e6e6ec" />
-        <circle cx={tx1} cy={ty1} r="4" fill="#e6e6ec" />
+        <circle cx={tx0} cy={ty0} r="4" fill="#2a2236" />
+        <circle cx={tx1} cy={ty1} r="4" fill="#2a2236" />
         {/* Center score */}
         <text x={cx} y={cy - 7} textAnchor="middle"
           style={{ fill: scoreColor, fontSize: 30, fontWeight: 900, fontFamily: 'inherit', letterSpacing: '-0.5px' }}>
           {score}
         </text>
         <text x={cx} y={cy + 11} textAnchor="middle"
-          style={{ fill: '#9097a6', fontSize: 10, fontFamily: 'inherit' }}>
+          style={{ fill: '#8a8799', fontSize: 10, fontFamily: 'inherit' }}>
           /100
         </text>
         {/* "0" and "100" labels at arc endpoints */}
         <text x={tx0 - 4} y={ty0 + 14} textAnchor="middle"
-          style={{ fill: '#d3d4dd', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>0</text>
+          style={{ fill: '#3a3149', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>0</text>
         <text x={tx1 + 4} y={ty1 + 14} textAnchor="middle"
-          style={{ fill: '#d3d4dd', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>100</text>
+          style={{ fill: '#3a3149', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>100</text>
       </svg>
       <span className={cn('inline-flex items-center text-[10px] font-black px-2.5 py-1 rounded-full border tracking-[0.05em] -mt-3', tierPill)}>
         {tierLabel}

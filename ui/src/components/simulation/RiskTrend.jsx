@@ -62,7 +62,7 @@ export function RiskTrend({ events = [], live = false }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#9097a6',
+        color: '#8a8799',
         fontSize: 12,
       }}>
         No data yet
@@ -151,7 +151,7 @@ export function RiskTrend({ events = [], live = false }) {
       </svg>
 
       {/* Legend */}
-      <div style={{ display: 'flex', gap: 12, fontSize: 10, color: '#9097a6', marginTop: 4 }}>
+      <div style={{ display: 'flex', gap: 12, fontSize: 10, color: '#8a8799', marginTop: 4 }}>
         <span style={{ color: '#ff5d3d' }}>── High (≥80)</span>
         <span style={{ color: '#ff9e2c' }}>── Med (≥50)</span>
         <span style={{ color: '#25bb49' }}>── Low</span>

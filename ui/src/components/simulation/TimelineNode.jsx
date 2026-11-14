@@ -12,18 +12,18 @@
  */
 
 const STAGE_STYLE = {
-  blocked:     { bg: '#fff1ee', border: '#ff5d3d', dot: '#ff5d3d', label: 'BLOCKED'     },
-  allowed:     { bg: '#f0fdf4', border: '#25bb49', dot: '#25bb49', label: 'ALLOWED'     },
-  error:       { bg: '#fff6ea', border: '#ff9e2c', dot: '#ff9e2c', label: 'ERROR'       },
-  probe_error: { bg: '#fff6ea', border: '#ff9e2c', dot: '#ff9e2c', label: 'PROBE ERROR' },
-  started:     { bg: '#f2f1ff', border: '#6247ff', dot: '#6247ff', label: 'START'       },
-  progress:    { bg: '#fafafa', border: '#d3d4dd', dot: '#9097a6', label: 'PROBE'       },
-  completed:   { bg: '#f7f7f9', border: '#d3d4dd', dot: '#9097a6', label: 'DONE'        },
+  blocked:     { bg: '#2a1210', border: '#ff5d3d', dot: '#ff5d3d', label: 'BLOCKED'     },
+  allowed:     { bg: '#0f2417', border: '#25bb49', dot: '#25bb49', label: 'ALLOWED'     },
+  error:       { bg: '#2a1c0c', border: '#ff9e2c', dot: '#ff9e2c', label: 'ERROR'       },
+  probe_error: { bg: '#2a1c0c', border: '#ff9e2c', dot: '#ff9e2c', label: 'PROBE ERROR' },
+  started:     { bg: '#17123a', border: '#6247ff', dot: '#6247ff', label: 'START'       },
+  progress:    { bg: '#fafafa', border: '#3a3149', dot: '#8a8799', label: 'PROBE'       },
+  completed:   { bg: '#150f1d', border: '#3a3149', dot: '#8a8799', label: 'DONE'        },
 }
-const DEFAULT_STYLE = { bg: '#f7f7f9', border: '#d3d4dd', dot: '#9097a6', label: '—' }
+const DEFAULT_STYLE = { bg: '#150f1d', border: '#3a3149', dot: '#8a8799', label: '—' }
 
 function riskColor(score) {
-  if (score == null) return '#9097a6'
+  if (score == null) return '#8a8799'
   if (score >= 80) return '#ff5d3d'
   if (score >= 50) return '#ff9e2c'
   return '#25bb49'
@@ -73,12 +73,12 @@ export function TimelineNode({ event, selected, onSelect, riskScore = null }) {
           )}
         </div>
 
-        <div style={{ fontSize: 12, color: '#373c4b', marginTop: 2, fontWeight: 500 }}>
+        <div style={{ fontSize: 12, color: '#d3d1de', marginTop: 2, fontWeight: 500 }}>
           {event.event_type}
         </div>
 
         {event.details?.message && (
-          <div style={{ fontSize: 11, color: '#6b7384', marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: '#a29fb2', marginTop: 2 }}>
             {event.details.message}
           </div>
         )}
@@ -103,7 +103,7 @@ export function TimelineNode({ event, selected, onSelect, riskScore = null }) {
             {riskScore}
           </span>
         )}
-        <span style={{ fontSize: 10, color: '#9097a6', whiteSpace: 'nowrap' }}>
+        <span style={{ fontSize: 10, color: '#8a8799', whiteSpace: 'nowrap' }}>
           {event.timestamp ? new Date(event.timestamp).toLocaleTimeString() : ''}
         </span>
       </div>

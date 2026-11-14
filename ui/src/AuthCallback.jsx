@@ -36,14 +36,14 @@ export default function AuthCallback() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#f8fafc',
+      background: '#07010d',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     }}>
       <div style={{
         width: '100%',
         maxWidth: 480,
-        background: '#fff',
-        border: '1px solid #e6e6ec',
+        background: '#110b17',
+        border: '1px solid #2a2236',
         borderRadius: 16,
         padding: '40px 36px',
         textAlign: 'center',
@@ -51,7 +51,7 @@ export default function AuthCallback() {
       }}>
         {!error && (
           <>
-            <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600, color: '#12151c' }}>
+            <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600, color: '#f5f4fa' }}>
               Signing you in&hellip;
             </h1>
             <p style={{ margin: '12px 0 0', fontSize: '0.875rem', color: '#64748b' }}>
@@ -66,7 +66,7 @@ export default function AuthCallback() {
             </h1>
             <p style={{
               marginTop: 16, padding: '10px 14px',
-              background: '#fff1ee', border: '1px solid #ffc4b8',
+              background: '#2a1210', border: '1px solid #ffc4b8',
               borderRadius: 8, fontSize: '0.875rem', color: '#e8452a',
               textAlign: 'left', wordBreak: 'break-word',
             }}>

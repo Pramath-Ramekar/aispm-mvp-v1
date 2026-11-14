@@ -21,7 +21,7 @@ export default function ChatInput({ onSend, loading, model, models, onModelChang
   return (
     <div style={{
       borderTop: '1px solid var(--border)',
-      background: 'rgba(255,255,255,0.95)',
+      background: 'rgba(17,11,23,0.95)',
       backdropFilter: 'blur(12px)',
       padding: '12px 20px 16px',
     }}>

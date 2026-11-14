@@ -343,12 +343,12 @@ function FindingsTable({ findings, selectedId, onSelect, loading }) {
     <table className="w-full border-collapse" data-testid="findings-table">
       <thead>
         <tr className="border-b border-gray-100">
-          <th className="w-0.5 bg-[#f4f4f6]" />
+          <th className="w-0.5 bg-[#07010d]" />
           {TABLE_HEADERS.map((h, i) => (
             <th
               key={h.label || i}
               className={cn(
-                'px-3 py-2 text-[10px] font-bold uppercase tracking-[0.07em] text-gray-400/80 text-left bg-[#f4f4f6]',
+                'px-3 py-2 text-[10px] font-bold uppercase tracking-[0.07em] text-gray-400/80 text-left bg-[#07010d]',
                 i === 0 && 'pl-4',
                 h.className,
               )}

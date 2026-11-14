@@ -24,8 +24,8 @@ const PHASE_COLOR = {
   'Injection':    '#8b5cf6',
   'Exploitation': '#ff5d3d',
   'Exfiltration': '#ff9e2c',
-  'System':       '#6b7384',
-  'Other':        '#9097a6',
+  'System':       '#a29fb2',
+  'Other':        '#8a8799',
 }
 
 function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
@@ -50,7 +50,7 @@ function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
           borderRadius: 4,
           cursor: 'pointer',
           fontSize: 11,
-          color: '#373c4b',
+          color: '#d3d1de',
           fontWeight: 600,
         }}
       >
@@ -82,7 +82,7 @@ function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
 
 export function PhaseSection({ phase, events, isGarak, selectedId, onSelect, getRiskScore }) {
   const [open, setOpen] = useState(true)
-  const color = PHASE_COLOR[phase] ?? '#9097a6'
+  const color = PHASE_COLOR[phase] ?? '#8a8799'
 
   // Count events in this phase
   const eventCount = isGarak
@@ -112,10 +112,10 @@ export function PhaseSection({ phase, events, isGarak, selectedId, onSelect, get
         <span style={{ fontSize: 11, fontWeight: 700, color, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
           {phase}
         </span>
-        <span style={{ fontSize: 10, color: '#9097a6', marginLeft: 4 }}>
+        <span style={{ fontSize: 10, color: '#8a8799', marginLeft: 4 }}>
           ({eventCount})
         </span>
-        <span style={{ marginLeft: 'auto', fontSize: 10, color: '#9097a6' }}>
+        <span style={{ marginLeft: 'auto', fontSize: 10, color: '#8a8799' }}>
           {open ? '▾' : '▸'}
         </span>
       </button>

@@ -185,7 +185,7 @@ export default function App({ agentBinding } = {}) {
   }, [])
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#110b17' }}>
       {inChat && (
         <Header
           model={model}
@@ -263,7 +263,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           fontWeight: 700,
           letterSpacing: '-0.04em',
           margin: 0,
-          color: '#12151c',
+          color: '#f5f4fa',
         }}>
           {isAgentMode ? agentBinding.name : 'AISPM'}
         </h1>
@@ -284,8 +284,8 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           display: 'flex',
           alignItems: 'flex-end',
           gap: 10,
-          background: '#ffffff',
-          border: '1.5px solid #e6e6ec',
+          background: '#110b17',
+          border: '1.5px solid #2a2236',
           borderRadius: 30,
           padding: '14px 16px',
           boxShadow: '0 10px 35px rgba(0,0,0,0.06)',
@@ -330,8 +330,8 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
               borderRadius: '50%',
               background: value.trim()
                 ? 'linear-gradient(135deg, #4d30ff, #7d86ff)'
-                : '#e6e6ec',
-              color: value.trim() ? '#fff' : '#9097a6',
+                : '#2a2236',
+              color: value.trim() ? '#fff' : '#8a8799',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -346,7 +346,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span style={{ fontSize: 13, color: '#9097a6' }}>Model:</span>
+        <span style={{ fontSize: 13, color: '#8a8799' }}>Model:</span>
         <select
           value={model}
           onChange={e => onModelChange(e.target.value)}
@@ -354,7 +354,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
             border: 'none',
             background: 'transparent',
             fontSize: 13,
-            color: '#373c4b',
+            color: '#d3d1de',
             cursor: 'pointer',
             outline: 'none',
           }}
@@ -378,7 +378,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           onClick={() => setDevOpen(!devOpen)}
           style={{
             fontSize: 12,
-            color: '#9097a6',
+            color: '#8a8799',
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
@@ -392,8 +392,8 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
             display: 'flex',
             gap: 16,
             fontSize: 13,
-            background: '#fff',
-            border: '1px solid #e6e6ec',
+            background: '#110b17',
+            border: '1px solid #2a2236',
             borderRadius: 12,
             padding: '8px 14px',
             boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
@@ -430,7 +430,7 @@ function LogoMark() {
         width: 320,
         height: 320,
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(77, 48, 255,0.35) 0%, rgba(6,182,212,0.22) 40%, transparent 75%)',
+        background: 'radial-gradient(circle, rgba(77, 48, 255,0.35) 0%, rgba(125,134,255,0.22) 40%, transparent 75%)',
         filter: 'blur(55px)',
       }} />
 

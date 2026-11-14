@@ -763,7 +763,7 @@ function CaseDetailPanel({ caseData, onClose }) {
                     {/* Dot + connector */}
                     <div className="flex flex-col items-center shrink-0">
                       <div className={cn(
-                        'w-7 h-7 rounded-full flex items-center justify-center shrink-0 ring-2 ring-[#f4f4f6]',
+                        'w-7 h-7 rounded-full flex items-center justify-center shrink-0 ring-2 ring-[#07010d]',
                         tcfg.dot,
                       )}>
                         <Icon size={12} className="text-white" strokeWidth={2} />

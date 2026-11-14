@@ -893,7 +893,7 @@ function DetailPanel({ policy, onUpdate, onDelete, onDuplicate, toast }) {
           : typeCfg.color.includes('pink')    ? '#db2777'
           : typeCfg.color.includes('indigo')  ? '#4338ca'
           : typeCfg.color.includes('amber')   ? '#d97706'
-          : '#6b7384'
+          : '#a29fb2'
         }}
       />
 

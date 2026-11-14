@@ -87,7 +87,7 @@ export default function RiskDistributionPanel() {
               x={CX} y={CY + 9}
               textAnchor="middle"
               fontSize="9" fontWeight="600"
-              fill="#9097a6"
+              fill="#8a8799"
               letterSpacing="0.06em"
             >
               MODELS

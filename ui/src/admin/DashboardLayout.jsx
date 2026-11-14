@@ -35,7 +35,7 @@ export default function DashboardLayout() {
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#f4f4f6]">
+    <div className="flex h-screen overflow-hidden bg-[#07010d]">
 
       {/* ── Far-left brand accent ──────────────────────────────────────── */}
       <AccentPillar />

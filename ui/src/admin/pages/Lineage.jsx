@@ -39,7 +39,7 @@ function replayPromptFromFinding(finding) {
 // ── Design tokens ──────────────────────────────────────────────────────────────
 
 const NODE_CFG = {
-  prompt:  { label: 'Prompt',    icon: MessageSquare, iconBg: 'bg-gray-100',    iconTxt: 'text-gray-500',    bg: 'bg-white',       border: 'border-gray-200',   accent: '#9097a6', typeTxt: 'text-gray-500'    },
+  prompt:  { label: 'Prompt',    icon: MessageSquare, iconBg: 'bg-gray-100',    iconTxt: 'text-gray-500',    bg: 'bg-white',       border: 'border-gray-200',   accent: '#8a8799', typeTxt: 'text-gray-500'    },
   context: { label: 'Context',   icon: Layers,        iconBg: 'bg-blue-50',     iconTxt: 'text-blue-600',    bg: 'bg-white',       border: 'border-blue-100',   accent: '#7d86ff', typeTxt: 'text-blue-500'    },
   rag:     { label: 'RAG Data',  icon: FileText,      iconBg: 'bg-cyan-50',     iconTxt: 'text-cyan-600',    bg: 'bg-white',       border: 'border-cyan-100',   accent: '#22d3ee', typeTxt: 'text-cyan-500'    },
   model:   { label: 'LLM Model', icon: Cpu,           iconBg: 'bg-violet-50',   iconTxt: 'text-violet-600',  bg: 'bg-white',       border: 'border-violet-100', accent: '#a78bfa', typeTxt: 'text-violet-500'  },
@@ -52,7 +52,7 @@ const NODE_CFG = {
 const RISK_VARIANT = { Critical: 'critical', High: 'high', Medium: 'medium', Low: 'low' }
 
 const EDGE_CFG = {
-  data:      { stroke: '#d3d4dd', strokeHi: '#9097a6', dash: null,       marker: 'm-data',      label: 'data flow'          },
+  data:      { stroke: '#3a3149', strokeHi: '#8a8799', dash: null,       marker: 'm-data',      label: 'data flow'          },
   sensitive: { stroke: '#ff9d8a', strokeHi: '#f87171', dash: '5,3',      marker: 'm-sensitive', label: 'sensitive data'     },
   tool:      { stroke: '#a5b4fc', strokeHi: '#7d86ff', dash: null,       marker: 'm-tool',      label: 'tool invocation'    },
   policy:    { stroke: '#fcd34d', strokeHi: '#f59e0b', dash: null,       marker: 'm-policy',    label: 'policy evaluation'  },
@@ -188,12 +188,12 @@ function LineageGraph({ selectedId, onSelect, nodes, edges, nodeEdges, cw, ch })
           <defs>
             {/* Dot-grid background pattern */}
             <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="1" cy="1" r="0.9" fill="#e6e6ec" />
+              <circle cx="1" cy="1" r="0.9" fill="#2a2236" />
             </pattern>
 
             {/* Arrowhead markers */}
             {[
-              { id: 'm-data',      fill: '#9097a6' },
+              { id: 'm-data',      fill: '#8a8799' },
               { id: 'm-sensitive', fill: '#f87171' },
               { id: 'm-tool',      fill: '#7d86ff' },
               { id: 'm-policy',    fill: '#f59e0b' },
@@ -223,7 +223,7 @@ function LineageGraph({ selectedId, onSelect, nodes, edges, nodeEdges, cw, ch })
                   y={22}
                   fontSize="9"
                   fontWeight="700"
-                  fill="#d3d4dd"
+                  fill="#3a3149"
                   letterSpacing="0.08em"
                   textAnchor="middle"
                   style={{ userSelect: 'none' }}
@@ -992,7 +992,7 @@ export default function Lineage({ simEvents: simEventsProp } = {}) {
             {/* Legend */}
             <div className="flex items-center gap-3 text-[10px] text-gray-400 shrink-0">
               {[
-                { label: 'data flow',   color: '#d3d4dd', dash: false },
+                { label: 'data flow',   color: '#3a3149', dash: false },
                 { label: 'sensitive',   color: '#ff9d8a', dash: true  },
                 { label: 'tool call',   color: '#a5b4fc', dash: false },
                 { label: 'policy',      color: '#fcd34d', dash: false },

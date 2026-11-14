@@ -49,7 +49,7 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
             cursor: 'pointer', outline: 'none', fontWeight: 500,
           }}
         >
-          {models.map(m => <option key={m.id} value={m.id} style={{ color: '#12151c' }}>{m.label}</option>)}
+          {models.map(m => <option key={m.id} value={m.id} style={{ color: '#f5f4fa' }}>{m.label}</option>)}
         </select>
       </div>
 
@@ -103,7 +103,7 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
             {/* Dropdown */}
             <div style={{
               position: 'absolute', top: 40, right: 0,
-              background: '#fff',
+              background: '#110b17',
               border: '1px solid var(--border)',
               borderRadius: 10,
               boxShadow: '0 8px 24px rgba(0,0,0,0.10)',
@@ -117,15 +117,15 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
                   display: 'flex', alignItems: 'center', gap: 8,
                   width: '100%', padding: '10px 16px',
                   background: 'none', border: 'none',
-                  fontSize: 13, color: '#373c4b',
+                  fontSize: 13, color: '#d3d1de',
                   cursor: 'pointer', textAlign: 'left',
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = '#f7f7f9'}
+                onMouseEnter={e => e.currentTarget.style.background = '#150f1d'}
                 onMouseLeave={e => e.currentTarget.style.background = 'none'}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  style={{ color: '#9097a6', flexShrink: 0 }}>
+                  style={{ color: '#8a8799', flexShrink: 0 }}>
                   <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
                   <polyline points="16 17 21 12 16 7"/>
                   <line x1="21" y1="12" x2="9" y2="12"/>

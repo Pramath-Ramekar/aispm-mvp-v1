@@ -483,7 +483,7 @@ function GraphView({ assets }) {
               key={i}
               x1="50%" y1="50%"
               x2={n.cx} y2={n.cy}
-              stroke="#d3d4dd"
+              stroke="#3a3149"
               strokeWidth="1.5"
               strokeDasharray="5 4"
             />
@@ -493,7 +493,7 @@ function GraphView({ assets }) {
             ['20%','22%','78%','22%'],
             ['22%','76%','78%','76%'],
           ].map(([x1,y1,x2,y2], i) => (
-            <line key={`x${i}`} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#e6e6ec" strokeWidth="1" strokeDasharray="4 4" />
+            <line key={`x${i}`} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#2a2236" strokeWidth="1" strokeDasharray="4 4" />
           ))}
         </svg>
 

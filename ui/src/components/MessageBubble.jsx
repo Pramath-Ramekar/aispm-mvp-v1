@@ -75,7 +75,7 @@ function BlockCard({ detail }) {
       </div>
 
       {/* Explanation — streams in with blinking cursor */}
-      <div style={{ fontSize: 13.5, color: '#373c4b', lineHeight: 1.6 }} className="block-explanation">
+      <div style={{ fontSize: 13.5, color: '#d3d1de', lineHeight: 1.6 }} className="block-explanation">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{visibleText}</ReactMarkdown>
         {!done && <span style={{ animation: 'blink 1s infinite', marginLeft: 1 }}>▌</span>}
       </div>
@@ -91,7 +91,7 @@ function BlockCard({ detail }) {
             <Tag label="Categories" value={detail.categories.join(', ')} color="#d97706" />
           )}
           {detail.correlation_id && (
-            <Tag label="ID" value={detail.correlation_id.slice(0, 8)} color="#6b7384" />
+            <Tag label="ID" value={detail.correlation_id.slice(0, 8)} color="#a29fb2" />
           )}
         </div>
       )}

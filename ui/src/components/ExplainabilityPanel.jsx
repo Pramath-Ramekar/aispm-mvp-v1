@@ -12,10 +12,10 @@ import { useState } from 'react'
  */
 
 const RISK_CFG = {
-  critical: { bg: '#fff1ee', border: '#ffc4b8', badge: '#ff5d3d', label: 'Critical' },
-  high:     { bg: '#fff6ea', border: '#fed7aa', badge: '#ff9e2c', label: 'High'     },
-  medium:   { bg: '#fefce8', border: '#fde68a', badge: '#d97706', label: 'Medium'   },
-  low:      { bg: '#f0fdf4', border: '#bbf7d0', badge: '#25bb49', label: 'Low'      },
+  critical: { bg: '#2a1210', border: '#ffc4b8', badge: '#ff5d3d', label: 'Critical' },
+  high:     { bg: '#2a1c0c', border: '#fed7aa', badge: '#ff9e2c', label: 'High'     },
+  medium:   { bg: '#2a2410', border: '#fde68a', badge: '#d97706', label: 'Medium'   },
+  low:      { bg: '#0f2417', border: '#bbf7d0', badge: '#25bb49', label: 'Low'      },
 }
 
 const DEFAULT_RISK = RISK_CFG.medium
@@ -47,7 +47,7 @@ function Section({ label, children }) {
         fontWeight: 700,
         textTransform: 'uppercase',
         letterSpacing: '0.08em',
-        color: '#9097a6',
+        color: '#8a8799',
         marginBottom: 4,
       }}>
         {label}
@@ -64,7 +64,7 @@ export function ExplainabilityPanel({ event }) {
   if (!event && !explanation) {
     return (
       <div style={{ padding: '24px 16px', textAlign: 'center' }}>
-        <p style={{ color: '#9097a6', fontSize: 13 }}>
+        <p style={{ color: '#8a8799', fontSize: 13 }}>
           Click a Timeline event to see its explanation.
         </p>
       </div>
@@ -74,7 +74,7 @@ export function ExplainabilityPanel({ event }) {
   if (!explanation) {
     return (
       <div style={{ padding: '24px 16px', textAlign: 'center' }}>
-        <p style={{ color: '#9097a6', fontSize: 13 }}>
+        <p style={{ color: '#8a8799', fontSize: 13 }}>
           No explanation available for this event.
         </p>
       </div>
@@ -106,7 +106,7 @@ export function ExplainabilityPanel({ event }) {
 
       {/* Reason */}
       <Section label="Why it was blocked">
-        <p style={{ fontSize: 13, color: '#373c4b', lineHeight: 1.6, margin: 0 }}>
+        <p style={{ fontSize: 13, color: '#d3d1de', lineHeight: 1.6, margin: 0 }}>
           {explanation.reason}
         </p>
       </Section>
@@ -115,8 +115,8 @@ export function ExplainabilityPanel({ event }) {
       {explanation.matched_signal && (
         <Section label="Matched signal">
           <div style={{
-            background: '#f7f7f9',
-            border: '1px solid #e6e6ec',
+            background: '#150f1d',
+            border: '1px solid #2a2236',
             borderLeft: '3px solid #ff5d3d',
             borderRadius: 6,
             padding: '8px 12px',
@@ -132,7 +132,7 @@ export function ExplainabilityPanel({ event }) {
 
       {/* Impact */}
       <Section label="Risk mitigated">
-        <p style={{ fontSize: 13, color: '#373c4b', lineHeight: 1.6, margin: 0 }}>
+        <p style={{ fontSize: 13, color: '#d3d1de', lineHeight: 1.6, margin: 0 }}>
           {explanation.impact}
         </p>
       </Section>
@@ -145,11 +145,11 @@ export function ExplainabilityPanel({ event }) {
             onClick={() => setDetailsOpen(o => !o)}
             style={{
               background: 'none',
-              border: '1px solid #e6e6ec',
+              border: '1px solid #2a2236',
               borderRadius: 6,
               padding: '6px 12px',
               fontSize: 12,
-              color: '#6b7384',
+              color: '#a29fb2',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -161,19 +161,19 @@ export function ExplainabilityPanel({ event }) {
           </button>
           {detailsOpen && (
             <div style={{
-              background: '#f7f7f9',
-              border: '1px solid #e6e6ec',
+              background: '#150f1d',
+              border: '1px solid #2a2236',
               borderRadius: 6,
               padding: '10px 12px',
               marginTop: 8,
               fontSize: 12,
-              color: '#373c4b',
+              color: '#d3d1de',
             }}>
               {Object.entries(explanation.technical_details)
                 .filter(([, v]) => v !== null && v !== undefined)
                 .map(([k, v]) => (
                   <div key={k} style={{ marginBottom: 4 }}>
-                    <span style={{ fontWeight: 600, color: '#6b7384', marginRight: 6 }}>
+                    <span style={{ fontWeight: 600, color: '#a29fb2', marginRight: 6 }}>
                       {k}:
                     </span>
                     <span>
