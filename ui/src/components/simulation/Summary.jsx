@@ -254,7 +254,7 @@ function CompletedPanel({ result, config }) {
             />
             Simulation config
           </summary>
-          <div className="mt-2 bg-gray-50/80 rounded-lg border border-gray-100 divide-y divide-gray-100 overflow-hidden">
+          <div className="mt-2 bg-gray-50 rounded-lg border border-gray-100 divide-y divide-gray-100 overflow-hidden">
             {[
               ['Agent',       config.agent],
               ['Model',       config.model],

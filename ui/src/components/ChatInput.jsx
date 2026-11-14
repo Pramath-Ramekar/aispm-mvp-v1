@@ -20,9 +20,10 @@ export default function ChatInput({ onSend, loading, model, models, onModelChang
 
   return (
     <div style={{
-      borderTop: '1px solid var(--border)',
-      background: 'rgba(17,11,23,0.95)',
-      backdropFilter: 'blur(12px)',
+      borderTop: '1px solid var(--glass-border)',
+      background: 'rgba(7,1,13,0.45)',
+      backdropFilter: 'blur(18px)',
+      WebkitBackdropFilter: 'blur(18px)',
       padding: '12px 20px 16px',
     }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
@@ -31,11 +32,13 @@ export default function ChatInput({ onSend, loading, model, models, onModelChang
           display: 'flex',
           alignItems: 'flex-end',
           gap: 8,
-          background: 'var(--bg-2)',
-          border: '1.5px solid var(--border)',
+          background: 'linear-gradient(150deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.035) 45%, rgba(98,71,255,0.09) 100%)',
+          backdropFilter: 'blur(26px) saturate(175%)',
+          WebkitBackdropFilter: 'blur(26px) saturate(175%)',
+          border: '1px solid rgba(255,255,255,0.12)',
           borderRadius: 'var(--radius-lg)',
           padding: '8px 10px',
-          boxShadow: 'var(--shadow-sm)',
+          boxShadow: '0 10px 32px rgba(2,0,10,0.45), inset 0 1px 0 rgba(255,255,255,0.2)',
           transition: 'border-color var(--transition)',
         }}>
           {/* + button */}

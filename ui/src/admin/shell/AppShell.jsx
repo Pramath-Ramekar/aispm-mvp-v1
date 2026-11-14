@@ -49,7 +49,7 @@ export function AppShell() {
   // chat-originated sessions share their event stream with the Lineage page.
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#07010d]">
+    <div className="flex h-screen overflow-hidden bg-transparent">
 
       {/* Far-left brand accent strip */}
       <AccentPillar />

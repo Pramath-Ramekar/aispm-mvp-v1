@@ -100,7 +100,7 @@ export default function Dashboard() {
             {ALERTS.map((row, i) => (
               <tr
                 key={i}
-                className="border-b border-gray-100 last:border-0 hover:bg-gray-50/70 transition-colors duration-100 cursor-pointer"
+                className="border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors duration-100 cursor-pointer"
               >
                 <td className="px-6 py-3.5">
                   <Badge variant={SEV_VARIANT[row.sev] ?? 'neutral'}>{row.sev}</Badge>

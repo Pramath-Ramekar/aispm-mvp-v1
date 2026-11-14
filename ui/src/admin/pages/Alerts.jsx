@@ -312,7 +312,7 @@ const TABLE_HEADERS = [
 
 function LoadingRows() {
   return Array.from({ length: 5 }).map((_, i) => (
-    <tr key={i} className="border-b border-gray-100/70 last:border-0">
+    <tr key={i} className="border-b border-gray-100 last:border-0">
       <td className="pl-4 pr-3 py-[11px]"><div className="h-5 w-20 bg-gray-100 rounded animate-pulse" /></td>
       <td className="px-3 py-[11px] text-center"><div className="h-4 w-8 bg-gray-100 rounded animate-pulse mx-auto" /></td>
       <td className="px-3 py-[11px] text-center"><div className="h-4 w-8 bg-gray-100 rounded animate-pulse mx-auto" /></td>
@@ -367,10 +367,10 @@ function FindingsTable({ findings, selectedId, onSelect, loading }) {
               key={finding.id}
               onClick={() => onSelect(selected ? null : finding)}
               className={cn(
-                'group border-b border-gray-100/70 last:border-0 cursor-pointer border-l-[3px]',
+                'group border-b border-gray-100 last:border-0 cursor-pointer border-l-[3px]',
                 'transition-colors duration-100',
                 rowBorder,
-                selected ? 'bg-blue-50/40' : 'hover:bg-gray-50/50',
+                selected ? 'bg-blue-50/40' : 'hover:bg-gray-50',
               )}
               data-testid={`finding-row-${finding.id}`}
             >
@@ -638,7 +638,7 @@ function FindingDetailPanel({ finding, onClose, onMarkStatus, onLinkCase }) {
 
   if (!finding) return null
 
-  const headerBg   = RISK_HEADER_BG[finding.severity]  ?? 'bg-gray-50/60 border-b-gray-100'
+  const headerBg   = RISK_HEADER_BG[finding.severity]  ?? 'bg-gray-50 border-b-gray-100'
   const stripColor = RISK_STRIP[finding.severity]       ?? 'bg-gray-300'
   const isResolved = finding.status === 'Resolved'
 
@@ -700,12 +700,12 @@ function FindingDetailPanel({ finding, onClose, onMarkStatus, onLinkCase }) {
       </div>
 
       {/* Scrollable body */}
-      <div className="flex-1 overflow-y-auto divide-y divide-gray-100/80">
+      <div className="flex-1 overflow-y-auto divide-y divide-gray-100">
 
         {/* ── Overview (existing) ───────────────────────────────────────── */}
         <PanelSection label="Overview">
           <p className="text-[12px] text-gray-600 leading-relaxed mb-3">{finding.description}</p>
-          <div className="bg-gray-50/70 rounded-lg border border-gray-100 divide-y divide-gray-100 overflow-hidden text-[12px]">
+          <div className="bg-gray-50 rounded-lg border border-gray-100 divide-y divide-gray-100 overflow-hidden text-[12px]">
             {[
               { icon: Tag,   key: 'Asset', val: <span className="flex items-center gap-1.5 font-medium text-gray-800">{finding.asset.name}<AssetTypeTag type={finding.asset.type} /></span> },
               { icon: Clock, key: 'Time',  val: <span className="text-gray-600 tabular-nums">{finding.timestampFull}</span> },
@@ -1157,7 +1157,7 @@ export default function Alerts() {
         </div>
 
         {/* Filter bar */}
-        <div className="px-5 py-2.5 border-b border-gray-100 bg-gray-50/30">
+        <div className="px-5 py-2.5 border-b border-gray-100 bg-gray-50">
           <FindingsFilterBar
             search={search}           setSearch={setSearch}
             severity={severity}       setSeverity={setSeverity}
@@ -1192,7 +1192,7 @@ export default function Alerts() {
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-2.5 border-t border-gray-100 flex items-center justify-between bg-gray-50/40">
+        <div className="px-5 py-2.5 border-t border-gray-100 flex items-center justify-between bg-gray-50">
           <span className="text-[11px] text-gray-400">
             {loading ? (
               <span className="flex items-center gap-1.5">

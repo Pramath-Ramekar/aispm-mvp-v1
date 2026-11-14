@@ -1013,7 +1013,7 @@ export default function Lineage({ simEvents: simEventsProp } = {}) {
           </div>
 
           {/* Graph footer — edge type + node selection stats */}
-          <div className="px-4 py-2 border-t border-gray-100 bg-gray-50/50 shrink-0 flex items-center gap-3">
+          <div className="px-4 py-2 border-t border-gray-100 bg-gray-50 shrink-0 flex items-center gap-3">
             <div className="flex items-center gap-3 text-[10px] text-gray-400">
               {positionedNodes.map(n => {
                 const ncfg = NODE_CFG[n.type] ?? NODE_CFG.prompt

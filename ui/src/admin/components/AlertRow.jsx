@@ -14,7 +14,7 @@ const SEV = { Critical: 'critical', High: 'high', Medium: 'medium', Low: 'low' }
  */
 export default function AlertRow({ sev, model, rule, time }) {
   return (
-    <tr className="border-b border-gray-100 last:border-0 hover:bg-gray-50/70 transition-colors cursor-pointer">
+    <tr className="border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors cursor-pointer">
       <td className="px-6 py-3.5">
         <MetricBadge label={sev} variant={SEV[sev] ?? 'neutral'} />
       </td>

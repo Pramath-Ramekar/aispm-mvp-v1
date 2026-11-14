@@ -410,7 +410,7 @@ function RecommendationList() {
         {RECOMMENDATIONS.map((rec, i) => {
           const imp = IMPACT_CFG[rec.impact] ?? IMPACT_CFG.Low
           return (
-            <div key={rec.id} className={cn('flex items-start gap-3 px-3 py-2.5 bg-gray-50 border border-gray-100 border-l-[3px] rounded-lg hover:bg-gray-100/60 transition-colors cursor-pointer group', imp.bdr)}>
+            <div key={rec.id} className={cn('flex items-start gap-3 px-3 py-2.5 bg-gray-50 border border-gray-100 border-l-[3px] rounded-lg hover:bg-gray-100 transition-colors cursor-pointer group', imp.bdr)}>
               {/* Priority badge */}
               <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 mt-0.5 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
                 <span className="text-[10px] font-black text-gray-500">{i + 1}</span>

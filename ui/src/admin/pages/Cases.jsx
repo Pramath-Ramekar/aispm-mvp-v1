@@ -292,7 +292,7 @@ function CasesTable({ cases, selectedId, onSelect, rowRefs }) {
     <div className="overflow-x-auto">
       <table className="w-full border-collapse min-w-[720px]">
         <thead>
-          <tr className="bg-gray-50/70 border-b border-gray-100">
+          <tr className="bg-gray-50 border-b border-gray-100">
             {['Case ID', 'Title', 'Pri', 'Severity', 'Status', 'Owner', 'Alerts', 'Created'].map(h => (
               <th key={h} className="text-left text-[10px] font-bold text-gray-400 uppercase tracking-[0.08em] px-4 py-2 whitespace-nowrap first:pl-5">
                 {h}
@@ -582,7 +582,7 @@ function CaseDetailPanel({ caseData, onClose }) {
                   { label: 'Owner',       value: caseData.ownerDisplay ?? '—',    icon: User      },
                   { label: 'Environment', value: caseData.environment,            icon: Network   },
                 ].map(({ label, value, icon: Icon }) => (
-                  <div key={label} className="flex items-center justify-between px-3 py-2 bg-gray-50/50">
+                  <div key={label} className="flex items-center justify-between px-3 py-2 bg-gray-50">
                     <div className="flex items-center gap-2 text-[11px] text-gray-400 font-medium w-24 shrink-0">
                       <Icon size={10} strokeWidth={2} />
                       {label}
@@ -794,7 +794,7 @@ function CaseDetailPanel({ caseData, onClose }) {
         {activeTab === 'Notes' && (
           <div className="flex flex-col h-full">
             {/* Compose bar */}
-            <div className="border-b border-gray-100 bg-gray-50/60 px-5 py-3 shrink-0">
+            <div className="border-b border-gray-100 bg-gray-50 px-5 py-3 shrink-0">
               <div className="flex items-end gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-[9px] font-bold shrink-0 shadow-sm ring-2 ring-white">
                   YO

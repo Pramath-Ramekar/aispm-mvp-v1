@@ -100,7 +100,7 @@ export function ProbeErrorCard({ row }) {
         type="button"
         className={cn(
           'w-full flex items-center gap-2 px-3 py-2 text-left transition-colors',
-          'hover:bg-gray-50/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset',
+          'hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset',
         )}
         aria-expanded={expanded}
         aria-controls={detailsId}
@@ -167,7 +167,7 @@ export function ProbeErrorCard({ row }) {
           id={detailsId}
           role="region"
           aria-label={`Probe error for ${attempt.probe}`}
-          className="border-t border-gray-100 bg-gray-50/40 px-3 py-3 space-y-2"
+          className="border-t border-gray-100 bg-gray-50 px-3 py-3 space-y-2"
         >
           <p className="inline-flex items-center gap-1.5 text-[11px] font-medium text-gray-700">
             <Icon size={12} className={style.txt} strokeWidth={2} />

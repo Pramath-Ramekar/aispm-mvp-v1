@@ -266,7 +266,7 @@ function Toggle({ checked, onChange }) {
         'focus:ring-2 focus:ring-offset-1',
         checked
           ? 'bg-emerald-500 focus:ring-emerald-400/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]'
-          : 'bg-gray-200 focus:ring-gray-300/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
+          : 'bg-gray-200 focus:ring-gray-300 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
       )}
     >
       <span className={cn(
@@ -542,7 +542,7 @@ function PostureGapRow({ gap, index }) {
   return (
     <div className={cn(
       'flex items-start gap-4 px-4 py-3.5 bg-white border border-gray-150 rounded-xl',
-      'hover:border-gray-200 hover:bg-gray-50/40 transition-colors',
+      'hover:border-gray-200 hover:bg-gray-50 transition-colors',
       'border-l-[3px] shadow-[0_1px_2px_rgba(0,0,0,0.04)]',
       sev.bdr,
     )}>
@@ -741,7 +741,7 @@ function DriftEventsTable({ events }) {
               const EVIcon  = ev.domainIcon
               const domCfg  = DOMAIN_COLOR_CFG[ev.domain] || { color: 'text-gray-600', bg: 'bg-gray-50', border: 'border-gray-200' }
               return (
-                <tr key={ev.id} className={cn('hover:bg-gray-50/50 transition-colors border-l-[3px] group', impCfg.bdr)}>
+                <tr key={ev.id} className={cn('hover:bg-gray-50 transition-colors border-l-[3px] group', impCfg.bdr)}>
                   <td className="w-0 p-0" />
                   {/* Timestamp */}
                   <td className="px-3.5 py-2.5 whitespace-nowrap">

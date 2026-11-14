@@ -356,7 +356,7 @@ function Toggle({ checked, onChange, showLabel = false }) {
           'focus:ring-2 focus:ring-offset-1',
           checked
             ? 'bg-emerald-500 focus:ring-emerald-400/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]'
-            : 'bg-gray-200 focus:ring-gray-300/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
+            : 'bg-gray-200 focus:ring-gray-300 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
         )}
       >
         <span className={cn(
@@ -468,7 +468,7 @@ function PlaybooksTable({ playbooks, selectedId, onSelect, onToggle }) {
     <div className="overflow-x-auto">
       <table className="w-full text-left border-collapse">
         <thead>
-          <tr className="border-b border-gray-100 bg-gray-50/80">
+          <tr className="border-b border-gray-100 bg-gray-50">
             {/* Spacer for left border */}
             <th className="w-0 p-0" />
             {PB_COLS.map(col => (
@@ -489,7 +489,7 @@ function PlaybooksTable({ playbooks, selectedId, onSelect, onToggle }) {
                 className={cn(
                   'cursor-pointer transition-colors duration-100 group border-l-[3px]',
                   bdr,
-                  isSelected ? 'bg-blue-50/60' : 'hover:bg-gray-50/50',
+                  isSelected ? 'bg-blue-50/60' : 'hover:bg-gray-50',
                 )}
               >
                 {/* Left border spacer */}
@@ -653,7 +653,7 @@ function PlaybookDetailPanel({ pb, onClose }) {
                     pb.status === 'Draft'   ? 'bg-yellow-400' : 'bg-gray-300'
   const HDR_BG    = pb.status === 'Error'   ? 'bg-red-50/50 border-b-red-100' :
                     pb.status === 'Active'  ? 'bg-emerald-50/30 border-b-emerald-100' :
-                    'bg-gray-50/60 border-b-gray-100'
+                    'bg-gray-50 border-b-gray-100'
 
   return (
     <div className="w-[440px] shrink-0 bg-white border border-gray-200 rounded-xl shadow-sm flex flex-col overflow-hidden">
@@ -1002,7 +1002,7 @@ function RecentRunsTable({ runs }) {
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="border-b border-gray-100 bg-gray-50/80">
+            <tr className="border-b border-gray-100 bg-gray-50">
               {/* Left border spacer */}
               <th className="w-0 p-0" />
               {['Run ID', 'Playbook', 'Triggered By', 'Result', 'Duration', 'Timestamp'].map(col => (
@@ -1016,7 +1016,7 @@ function RecentRunsTable({ runs }) {
             {runs.map(run => {
               const bdr = RUN_ROW_BDR[run.result] || 'border-l-gray-200'
               return (
-                <tr key={run.id} className={cn('hover:bg-gray-50/50 transition-colors group border-l-[3px]', bdr)}>
+                <tr key={run.id} className={cn('hover:bg-gray-50 transition-colors group border-l-[3px]', bdr)}>
                   <td className="w-0 p-0" />
                   <td className="px-3.5 py-2.5">
                     <span className="text-[11px] font-mono font-medium text-gray-500 group-hover:text-blue-600 transition-colors">{run.id}</span>

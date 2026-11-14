@@ -314,7 +314,7 @@ function AssetTable({ assets, selectedId, onSelect }) {
             <th
               key={h.label || i}
               className={cn(
-                'px-4 py-2.5 text-[10px] font-semibold uppercase tracking-widest text-gray-400 text-left bg-gray-50/60',
+                'px-4 py-2.5 text-[10px] font-semibold uppercase tracking-widest text-gray-400 text-left bg-gray-50',
                 h.className,
               )}
             >
@@ -365,11 +365,11 @@ function AssetTable({ assets, selectedId, onSelect }) {
             <tr
               onClick={() => onSelect(selected ? null : asset)}
               className={cn(
-                'group border-b border-gray-100/80 last:border-0 cursor-pointer',
+                'group border-b border-gray-100 last:border-0 cursor-pointer',
                 'transition-colors duration-100',
                 selected
                   ? 'bg-blue-50/50'
-                  : 'hover:bg-gray-50/60',
+                  : 'hover:bg-gray-50',
               )}
             >
               {/* Name */}
@@ -474,7 +474,7 @@ function GraphView({ assets }) {
     <div className="flex flex-col items-center py-10 px-8 gap-8 select-none">
 
       {/* Canvas */}
-      <div className="relative w-full max-w-lg border-2 border-dashed border-gray-200 rounded-2xl bg-gray-50/40 h-64 overflow-hidden">
+      <div className="relative w-full max-w-lg border-2 border-dashed border-gray-200 rounded-2xl bg-gray-50 h-64 overflow-hidden">
 
         {/* SVG connector lines */}
         <svg className="absolute inset-0 w-full h-full">
@@ -1705,7 +1705,7 @@ export default function Inventory() {
 
         {/* Footer */}
         {view === 'table' && (
-          <div className="px-5 py-2.5 border-t border-gray-100 flex items-center justify-between bg-gray-50/40">
+          <div className="px-5 py-2.5 border-t border-gray-100 flex items-center justify-between bg-gray-50">
             <span className="text-[11px] text-gray-400">
               {filtered.length} of {rawAssets.length} asset{rawAssets.length !== 1 ? 's' : ''}
             </span>

@@ -650,7 +650,7 @@ function Toggle({ checked, onChange }) {
         'focus:ring-2 focus:ring-offset-1',
         checked
           ? 'bg-emerald-500 focus:ring-emerald-400/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]'
-          : 'bg-gray-200 focus:ring-gray-300/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
+          : 'bg-gray-200 focus:ring-gray-300 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
       )}
     >
       <span className={cn(
@@ -866,7 +866,7 @@ function SourceRow({ source: src, isSelected, onSelect }) {
       className={cn(
         'cursor-pointer transition-colors duration-100 group border-l-[3px]',
         stCfg.bdr,
-        isSelected ? 'bg-blue-50/60' : 'hover:bg-gray-50/40',
+        isSelected ? 'bg-blue-50/60' : 'hover:bg-gray-50',
       )}
     >
       <td className="w-0 p-0" />
@@ -1026,7 +1026,7 @@ function RecommendedActions({ actions }) {
   return (
     <div className="space-y-1.5">
       {actions.map((action, idx) => (
-        <div key={idx} className="flex items-center gap-2.5 px-3.5 py-2.5 bg-white border border-gray-150 rounded-xl hover:border-gray-200 hover:bg-gray-50/40 transition-colors cursor-pointer group shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+        <div key={idx} className="flex items-center gap-2.5 px-3.5 py-2.5 bg-white border border-gray-150 rounded-xl hover:border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer group shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
           <ArrowRight size={11} className="text-gray-400 shrink-0 group-hover:text-blue-500 transition-colors" />
           <span className="text-[12px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">{action}</span>
         </div>
@@ -1633,7 +1633,7 @@ function SyncEventsTable({ events }) {
               const impCfg = EVENT_IMPACT_CFG[ev.impact] || EVENT_IMPACT_CFG['Low']
               const resCls = EVENT_RESULT_CFG[ev.result] || EVENT_RESULT_CFG['Info']
               return (
-                <tr key={ev.id} className={cn('hover:bg-gray-50/50 transition-colors border-l-[3px] group', impCfg.bdr)}>
+                <tr key={ev.id} className={cn('hover:bg-gray-50 transition-colors border-l-[3px] group', impCfg.bdr)}>
                   <td className="w-0 p-0" />
                   <td className="px-3.5 py-2.5 whitespace-nowrap">
                     <span className="text-[10.5px] font-mono text-gray-400">{ev.ts}</span>

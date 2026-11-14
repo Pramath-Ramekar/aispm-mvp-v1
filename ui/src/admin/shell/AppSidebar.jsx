@@ -111,7 +111,7 @@ export function AppSidebar({ collapsed }) {
   return (
     <aside
       className={cn(
-        'shrink-0 h-screen flex flex-col bg-void border-r border-white/[0.08]',
+        'shrink-0 h-screen flex flex-col bg-[rgba(9,4,16,0.55)] backdrop-blur-2xl border-r border-white/[0.08]',
         'transition-[width] duration-200 ease-in-out',
         collapsed ? 'w-20' : 'w-64',
       )}

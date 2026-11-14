@@ -258,7 +258,7 @@ function RbacMatrix({ isAdmin }) {
       <div className="overflow-x-auto rounded-xl border border-gray-200">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-gray-50/80 border-b border-gray-200">
+            <tr className="bg-gray-50 border-b border-gray-200">
               <th className="w-52 px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wide text-gray-400">
                 Permission
               </th>
@@ -275,7 +275,7 @@ function RbacMatrix({ isAdmin }) {
           <tbody>
             {PERMISSION_GROUPS.map(group => (
               <>
-                <tr key={`group-${group.label}`} className="bg-gray-50/40 border-y border-gray-100">
+                <tr key={`group-${group.label}`} className="bg-gray-50 border-y border-gray-100">
                   <td
                     colSpan={ROLES.length + 1}
                     className="px-4 py-1.5"
@@ -291,7 +291,7 @@ function RbacMatrix({ isAdmin }) {
                 {group.perms.map(perm => (
                   <tr
                     key={perm.key}
-                    className="border-b border-gray-100 last:border-0 hover:bg-gray-50/30 transition-colors"
+                    className="border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
                   >
                     <td
                       className="px-4 py-2.5 cursor-help"

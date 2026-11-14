@@ -769,7 +769,7 @@ function SimulationBuilder({
                   'flex flex-col items-start gap-1 px-2.5 py-2 rounded-lg border text-left transition-all duration-100',
                   attackType === at.id
                     ? cn(at.bg, at.border, 'ring-1 ring-offset-0', at.border.replace('border-', 'ring-'))
-                    : 'bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50/80',
+                    : 'bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50',
                 )}
               >
                 <div className="flex items-center gap-1.5">
@@ -942,7 +942,7 @@ function SimulationBuilder({
       </div>
 
       {/* ── Run button ── */}
-      <div className="px-4 py-3 border-t border-gray-100 bg-gray-50/60 shrink-0">
+      <div className="px-4 py-3 border-t border-gray-100 bg-gray-50 shrink-0">
         <Button
           variant="default"
           size="md"

@@ -41,22 +41,60 @@
   color-scheme: dark;
 }
 
-/* Light-theme "white" surfaces become dark cards */
-.bg-white                { background-color: #110b17; }
-.hover\:bg-white:hover   { background-color: #1b1425; }
-.focus\:bg-white:focus   { background-color: #1b1425; }
-.bg-white\/90            { background-color: rgba(17, 11, 23, 0.9); }
-.bg-white\/85            { background-color: rgba(7, 1, 13, 0.85); }
-.bg-white\/60            { background-color: rgba(17, 11, 23, 0.6); }
-.border-white            { border-color: rgba(255, 255, 255, 0.1); }
-.ring-white              { --tw-ring-color: #110b17; }
+/* ── Liquid glass ─────────────────────────────────────────────────────────
+ * Every former "white" card becomes frosted glass: a faint light gradient,
+ * heavy backdrop blur, a bright top-left edge and a soft violet depth shadow.
+ * The page itself carries violet ambient glows (below) for the glass to refract. */
+.bg-white {
+  background-color: transparent;
+  background-image: linear-gradient(150deg, rgba(255,255,255,0.095) 0%, rgba(255,255,255,0.03) 40%, rgba(98,71,255,0.075) 100%);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    0 12px 40px rgba(2, 0, 10, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 1px 0 0 rgba(255,255,255,0.08),
+    inset 0 -1px 0 rgba(255,255,255,0.03);
+}
+.bg-white.rounded-lg, .bg-white.rounded-xl, .bg-white.rounded-2xl, .bg-white.rounded-3xl {
+  -webkit-backdrop-filter: blur(26px) saturate(175%);
+  backdrop-filter: blur(26px) saturate(175%);
+}
+/* menus, popovers and drawers need to stay readable over content */
+.bg-white.shadow-lg, .bg-white.shadow-xl, .bg-white.shadow-2xl {
+  background-color: rgba(17, 11, 23, 0.9);
+}
+/* toggle knobs, dots and avatars stay solid white */
+.bg-white.rounded-full {
+  background-color: #fff;
+  background-image: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.hover\:bg-white:hover    { background-color: rgba(255, 255, 255, 0.07); }
+.focus\:bg-white:focus    { background-color: rgba(255, 255, 255, 0.07); }
+.bg-white\/90             { background-color: rgba(17, 11, 23, 0.72); }
+.bg-white\/85             { background-color: rgba(255, 255, 255, 0.04); }
+.bg-white\/60             { background-color: rgba(255, 255, 255, 0.05); }
+.border-white             { border-color: rgba(255, 255, 255, 0.12); }
+.ring-white               { --tw-ring-color: rgba(255, 255, 255, 0.12); }
 .hover\:bg-black\/5:hover { background-color: rgba(255, 255, 255, 0.06); }
+
+/* Ambient violet glows behind the glass */
+html, body {
+  background-color: #07010d;
+  background-image:
+    radial-gradient(70vw 48vh at 62% -10%, rgba(120, 90, 255, 0.42), transparent 70%),
+    radial-gradient(60vw 42vh at 12% 112%, rgba(77, 48, 255, 0.34), transparent 70%),
+    radial-gradient(42vw 34vh at 102% 58%, rgba(125, 134, 255, 0.14), transparent 70%);
+  background-attachment: fixed;
+}
 
 input, select, textarea { background-color: transparent; color: inherit; }
 input::placeholder, textarea::placeholder { color: #8a8799; }
 option { background: #110b17; color: #f5f4fa; }
 
-html, body, #root { height: 100%; background: var(--bg); color: var(--text); }
+html, body, #root { height: 100%; color: var(--text); }
 
 h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 ::selection { background: var(--accent-tint); color: var(--void); }

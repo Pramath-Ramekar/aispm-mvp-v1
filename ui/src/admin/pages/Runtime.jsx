@@ -429,7 +429,7 @@ function SessionList({ sessions, selectedId, onSelect, filter }) {
               'border-l-[3px]',
               isSelected
                 ? 'bg-blue-50/70 border-l-blue-500'
-                : 'bg-white border-l-transparent hover:bg-gray-50/80 hover:border-l-gray-300',
+                : 'bg-white border-l-transparent hover:bg-gray-50 hover:border-l-gray-300',
             )}
           >
             {/* Agent + score */}
@@ -480,7 +480,7 @@ function EventRow({ event, isNew }) {
     <div className={cn(
       'flex items-start gap-3 px-3 py-2 border-l-[3px] transition-colors duration-200',
       cfg.border,
-      isNew ? 'bg-blue-50/50' : (cfg.rowBg || 'bg-white hover:bg-gray-50/60'),
+      isNew ? 'bg-blue-50/50' : (cfg.rowBg || 'bg-white hover:bg-gray-50'),
     )}>
       {/* Type icon */}
       <div className={cn('w-6 h-6 rounded flex items-center justify-center shrink-0 mt-px', cfg.iconBg)}>

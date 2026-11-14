@@ -585,7 +585,7 @@ function Toggle({ checked, onChange, showLabel = false }) {
           'focus:ring-2 focus:ring-offset-1',
           checked
             ? 'bg-emerald-500 focus:ring-emerald-400/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]'
-            : 'bg-gray-200 focus:ring-gray-300/40 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
+            : 'bg-gray-200 focus:ring-gray-300 shadow-[inset_0_1px_2px_rgba(0,0,0,0.10)]',
         )}
       >
         <span className={cn(
@@ -780,7 +780,7 @@ function IntegrationRow({ integration: int, isSelected, onSelect, onToggle }) {
       className={cn(
         'cursor-pointer transition-colors duration-100 group border-l-[3px]',
         stCfg.bdr,
-        isSelected ? 'bg-blue-50/60' : 'hover:bg-gray-50/40',
+        isSelected ? 'bg-blue-50/60' : 'hover:bg-gray-50',
       )}
     >
       <td className="w-0 p-0" />
@@ -938,7 +938,7 @@ function IntegrationDetailPanel({
                     int.status === 'Healthy' ? 'bg-emerald-50/30 border-b-emerald-100' :
                     int.status === 'Warning' ? 'bg-yellow-50/40 border-b-yellow-100' :
                     int.status === 'Partial' ? 'bg-blue-50/40 border-b-blue-100' :
-                    'bg-gray-50/60 border-b-gray-100'
+                    'bg-gray-50 border-b-gray-100'
 
   return (
     <div className="w-[440px] shrink-0 bg-white border border-gray-200 rounded-xl shadow-sm flex flex-col overflow-hidden">
@@ -1425,7 +1425,7 @@ function RecentActivityTable({ events }) {
               const cfg = ACT_RESULT_CFG[ev.result] || ACT_RESULT_CFG['Info']
               const bdr = ACT_ROW_BDR[ev.result] || 'border-l-gray-200'
               return (
-                <tr key={ev.id} className={cn('hover:bg-gray-50/50 transition-colors group border-l-[3px]', bdr)}>
+                <tr key={ev.id} className={cn('hover:bg-gray-50 transition-colors group border-l-[3px]', bdr)}>
                   <td className="w-0 p-0" />
                   <td className="px-3.5 py-2.5 whitespace-nowrap">
                     <span className="text-[10.5px] font-mono text-gray-400">{ev.ts}</span>

@@ -923,7 +923,7 @@ function DetailPanel({ policy, onUpdate, onDelete, onDuplicate, toast }) {
       </div>
 
       {/* ── TOOLBAR ROW ── */}
-      <div className="px-4 py-1.5 bg-gray-50/70 border-b border-gray-100 flex items-center gap-1 shrink-0">
+      <div className="px-4 py-1.5 bg-gray-50 border-b border-gray-100 flex items-center gap-1 shrink-0">
         {/* Group A — edit */}
         <div className="flex items-center gap-1">
           {editMode ? (
@@ -1289,7 +1289,7 @@ function DetailPanel({ policy, onUpdate, onDelete, onDuplicate, toast }) {
                   </div>
                   <div className={cn(
                     'flex flex-wrap gap-1.5 rounded-lg border px-3 py-2 min-h-[38px] items-center',
-                    items.length === 0 ? 'bg-gray-50/70 border-dashed border-gray-200' : 'bg-white border-gray-100',
+                    items.length === 0 ? 'bg-gray-50 border-dashed border-gray-200' : 'bg-white border-gray-100',
                   )}>
                     {items.length === 0
                       ? <p className="text-[10.5px] text-gray-400 italic">None assigned — {hint}</p>
@@ -1339,7 +1339,7 @@ function DetailPanel({ policy, onUpdate, onDelete, onDuplicate, toast }) {
               <div className={cn(
                 'flex flex-wrap gap-1.5 rounded-lg border px-3 py-2 min-h-[38px] items-center',
                 !policy.exceptions?.length
-                  ? 'bg-gray-50/70 border-dashed border-gray-200'
+                  ? 'bg-gray-50 border-dashed border-gray-200'
                   : 'bg-amber-50/40 border-amber-200',
               )}>
                 {!policy.exceptions?.length
@@ -1407,7 +1407,7 @@ function DetailPanel({ policy, onUpdate, onDelete, onDuplicate, toast }) {
                         </div>
                       </div>
                       <div className="px-3 py-2">
-                        <p className="text-[11.5px] text-gray-600 leading-relaxed font-mono bg-gray-50/80 rounded px-2 py-1.5 border border-gray-100">
+                        <p className="text-[11.5px] text-gray-600 leading-relaxed font-mono bg-gray-50 rounded px-2 py-1.5 border border-gray-100">
                           <span className="text-emerald-600 font-semibold select-none mr-1.5">+</span>{h.change}
                         </p>
                       </div>
@@ -1485,7 +1485,7 @@ function RestoreModal({ policy, target, restoring, onConfirm, onClose }) {
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-end gap-2 px-5 py-4 border-t border-gray-100 bg-gray-50/60">
+        <div className="flex items-center justify-end gap-2 px-5 py-4 border-t border-gray-100 bg-gray-50">
           <button
             onClick={onClose}
             disabled={restoring}

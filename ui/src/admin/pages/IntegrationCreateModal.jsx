@@ -390,7 +390,7 @@ export function IntegrationCreateModal({ open, onClose, onCreated }) {
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-3.5 border-t border-gray-100 flex items-center justify-end gap-2 bg-gray-50/60">
+        <div className="px-5 py-3.5 border-t border-gray-100 flex items-center justify-end gap-2 bg-gray-50">
           <Button
             type="button"
             variant="outline"

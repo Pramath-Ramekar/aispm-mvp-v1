@@ -185,7 +185,7 @@ export default function App({ agentBinding } = {}) {
   }, [])
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#110b17' }}>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: 'transparent' }}>
       {inChat && (
         <Header
           model={model}
@@ -284,11 +284,13 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           display: 'flex',
           alignItems: 'flex-end',
           gap: 10,
-          background: '#110b17',
-          border: '1.5px solid #2a2236',
+          background: 'linear-gradient(150deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.035) 45%, rgba(98,71,255,0.09) 100%)',
+          backdropFilter: 'blur(26px) saturate(175%)',
+          WebkitBackdropFilter: 'blur(26px) saturate(175%)',
+          border: '1px solid rgba(255,255,255,0.12)',
           borderRadius: 30,
           padding: '14px 16px',
-          boxShadow: '0 10px 35px rgba(0,0,0,0.06)',
+          boxShadow: '0 14px 44px rgba(2,0,10,0.5), inset 0 1px 0 rgba(255,255,255,0.22), inset 1px 0 0 rgba(255,255,255,0.08)',
         }}>
 
           <textarea
