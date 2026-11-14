@@ -60,7 +60,7 @@ function BlockCard({ detail }) {
 
   return (
     <div style={{
-      borderLeft: '3px solid #ef4444',
+      borderLeft: '3px solid #ff5d3d',
       background: 'rgba(239,68,68,0.05)',
       borderRadius: '0 10px 10px 0',
       padding: '12px 14px',
@@ -71,11 +71,11 @@ function BlockCard({ detail }) {
       {/* Header — always visible immediately */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <span style={{ fontSize: 16 }}>🛡️</span>
-        <span style={{ fontWeight: 700, fontSize: 14, color: '#dc2626' }}>Request Blocked</span>
+        <span style={{ fontWeight: 700, fontSize: 14, color: '#e8452a' }}>Request Blocked</span>
       </div>
 
       {/* Explanation — streams in with blinking cursor */}
-      <div style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }} className="block-explanation">
+      <div style={{ fontSize: 13.5, color: '#373c4b', lineHeight: 1.6 }} className="block-explanation">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{visibleText}</ReactMarkdown>
         {!done && <span style={{ animation: 'blink 1s infinite', marginLeft: 1 }}>▌</span>}
       </div>
@@ -83,7 +83,7 @@ function BlockCard({ detail }) {
       {/* Tags — fade in only after text finishes streaming */}
       {done && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 2, animation: 'fadeIn 0.35s ease' }}>
-          <Tag label="Trigger" value={reason} color="#dc2626" />
+          <Tag label="Trigger" value={reason} color="#e8452a" />
           {detail.matched_rule && (
             <Tag label="Rule" value={detail.matched_rule} color="#7c3aed" />
           )}
@@ -91,7 +91,7 @@ function BlockCard({ detail }) {
             <Tag label="Categories" value={detail.categories.join(', ')} color="#d97706" />
           )}
           {detail.correlation_id && (
-            <Tag label="ID" value={detail.correlation_id.slice(0, 8)} color="#6b7280" />
+            <Tag label="ID" value={detail.correlation_id.slice(0, 8)} color="#6b7384" />
           )}
         </div>
       )}
@@ -194,12 +194,12 @@ export default function MessageBubble({ message }) {
                 {badges.map((b, i) => (
                   <span key={i} style={{
                     display: 'inline-flex', alignItems: 'center', gap: 4,
-                    background: 'rgba(37,99,235,0.08)',
-                    border: '1px solid rgba(37,99,235,0.18)',
+                    background: 'rgba(77, 48, 255,0.08)',
+                    border: '1px solid rgba(77, 48, 255,0.18)',
                     borderRadius: 20,
                     padding: '2px 10px',
                     fontSize: 12,
-                    color: '#1d4ed8',
+                    color: '#2c20db',
                     fontWeight: 500,
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',

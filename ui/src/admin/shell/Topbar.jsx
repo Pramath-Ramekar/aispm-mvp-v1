@@ -94,7 +94,7 @@ function AvatarMenu() {
 // ── Topbar ─────────────────────────────────────────────────────────────────────
 export function Topbar({ collapsed, onToggle }) {
   return (
-    <header className="h-16 shrink-0 bg-white border-b border-gray-200 flex items-center px-4 gap-3">
+    <header className="h-16 shrink-0 bg-white/85 backdrop-blur-md border-b border-gray-200 flex items-center px-4 gap-3">
 
       {/* Collapse toggle */}
       <IconButton

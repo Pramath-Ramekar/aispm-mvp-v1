@@ -43,7 +43,7 @@ export default function AuthCallback() {
         width: '100%',
         maxWidth: 480,
         background: '#fff',
-        border: '1px solid #e5e7eb',
+        border: '1px solid #e6e6ec',
         borderRadius: 16,
         padding: '40px 36px',
         textAlign: 'center',
@@ -51,7 +51,7 @@ export default function AuthCallback() {
       }}>
         {!error && (
           <>
-            <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600, color: '#0f172a' }}>
+            <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600, color: '#12151c' }}>
               Signing you in&hellip;
             </h1>
             <p style={{ margin: '12px 0 0', fontSize: '0.875rem', color: '#64748b' }}>
@@ -61,13 +61,13 @@ export default function AuthCallback() {
         )}
         {error && (
           <>
-            <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600, color: '#dc2626' }}>
+            <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600, color: '#e8452a' }}>
               Sign-in failed
             </h1>
             <p style={{
               marginTop: 16, padding: '10px 14px',
-              background: '#fef2f2', border: '1px solid #fecaca',
-              borderRadius: 8, fontSize: '0.875rem', color: '#dc2626',
+              background: '#fff1ee', border: '1px solid #ffc4b8',
+              borderRadius: 8, fontSize: '0.875rem', color: '#e8452a',
               textAlign: 'left', wordBreak: 'break-word',
             }}>
               {error}
@@ -76,7 +76,7 @@ export default function AuthCallback() {
               onClick={() => loginRedirect('/admin/overview').catch(e => setError(e.message))}
               style={{
                 marginTop: 16, padding: '11px 24px',
-                background: 'linear-gradient(135deg, #2563EB, #06B6D4)',
+                background: 'linear-gradient(135deg, #4d30ff, #7d86ff)',
                 color: '#fff', border: 'none', borderRadius: 8,
                 fontSize: '0.9375rem', fontWeight: 600, cursor: 'pointer',
               }}

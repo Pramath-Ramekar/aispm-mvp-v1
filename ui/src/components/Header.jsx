@@ -5,21 +5,27 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <header style={{
-      height: 54,
-      borderBottom: '1px solid var(--border)',
+      height: 58,
+      borderBottom: '1px solid var(--glass-border)',
       display: 'flex',
       alignItems: 'center',
       padding: '0 20px',
       gap: 12,
-      background: 'rgba(255,255,255,0.92)',
-      backdropFilter: 'blur(12px)',
+      background: 'rgba(7,1,13,0.94)',
+      backdropFilter: 'blur(14px)',
       position: 'sticky',
       top: 0,
       zIndex: 100,
     }}>
       {/* Wordmark */}
-      <div style={{ display: 'flex', alignItems: 'center', flex: 1, gap: 8 }}>
-        <span style={{ fontWeight: 700, fontSize: 16, letterSpacing: '-0.02em', color: 'var(--text)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', flex: 1, gap: 10 }}>
+        <div style={{
+          width: 28, height: 28, borderRadius: 9,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'var(--accent-gradient)', color: '#fff',
+          fontFamily: 'var(--font-display)', fontSize: 14, fontWeight: 700,
+        }}>A</div>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 17, letterSpacing: '-0.03em', color: '#fff' }}>
           AISPM
         </span>
       </div>
@@ -27,23 +33,23 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
       {/* Model selector */}
       <div style={{
         display: 'flex', alignItems: 'center', gap: 6,
-        background: 'var(--bg-2)',
-        border: '1px solid var(--border)',
-        borderRadius: 8,
-        padding: '4px 10px',
+        background: 'var(--glass)',
+        border: '1px solid var(--glass-border)',
+        borderRadius: 12,
+        padding: '5px 12px',
         fontSize: 13,
       }}>
-        <span style={{ color: 'var(--text-3)', fontSize: 11 }}>Model</span>
+        <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: 11 }}>Model</span>
         <select
           value={model}
           onChange={e => onModelChange(e.target.value)}
           style={{
             border: 'none', background: 'transparent',
-            fontSize: 13, color: 'var(--text)',
+            fontSize: 13, color: '#fff',
             cursor: 'pointer', outline: 'none', fontWeight: 500,
           }}
         >
-          {models.map(m => <option key={m.id} value={m.id}>{m.label}</option>)}
+          {models.map(m => <option key={m.id} value={m.id} style={{ color: '#12151c' }}>{m.label}</option>)}
         </select>
       </div>
 
@@ -52,16 +58,16 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
         onClick={onNewChat}
         style={{
           display: 'flex', alignItems: 'center', gap: 5,
-          background: 'var(--bg-2)',
-          border: '1px solid var(--border)',
-          borderRadius: 8,
-          padding: '5px 12px',
+          background: 'var(--glass)',
+          border: '1px solid var(--glass-border)',
+          borderRadius: 12,
+          padding: '6px 14px',
           fontSize: 13, fontWeight: 500,
-          color: 'var(--text-2)',
+          color: 'rgba(255,255,255,0.7)',
           transition: 'background var(--transition), color var(--transition)',
         }}
-        onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-3)'; e.currentTarget.style.color = 'var(--text)' }}
-        onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-2)'; e.currentTarget.style.color = 'var(--text-2)' }}
+        onMouseEnter={e => { e.currentTarget.style.background = 'var(--glass-strong)'; e.currentTarget.style.color = '#fff' }}
+        onMouseLeave={e => { e.currentTarget.style.background = 'var(--glass)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
       >
         <span style={{ fontSize: 15, lineHeight: 1 }}>+</span>
         New chat
@@ -75,7 +81,7 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
           style={{
             width: 32, height: 32,
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #2563EB, #06B6D4)',
+            background: 'linear-gradient(135deg, #4d30ff, #7d86ff)',
             border: 'none',
             cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -111,15 +117,15 @@ export default function Header({ model, models, onModelChange, onNewChat }) {
                   display: 'flex', alignItems: 'center', gap: 8,
                   width: '100%', padding: '10px 16px',
                   background: 'none', border: 'none',
-                  fontSize: 13, color: '#374151',
+                  fontSize: 13, color: '#373c4b',
                   cursor: 'pointer', textAlign: 'left',
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = '#f9fafb'}
+                onMouseEnter={e => e.currentTarget.style.background = '#f7f7f9'}
                 onMouseLeave={e => e.currentTarget.style.background = 'none'}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  style={{ color: '#9ca3af', flexShrink: 0 }}>
+                  style={{ color: '#9097a6', flexShrink: 0 }}>
                   <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
                   <polyline points="16 17 21 12 16 7"/>
                   <line x1="21" y1="12" x2="9" y2="12"/>

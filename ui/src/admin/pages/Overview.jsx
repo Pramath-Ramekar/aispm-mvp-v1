@@ -145,7 +145,7 @@ function PostureGauge({ score = 83 }) {
   const fillPath  = arcPath(start, fillDeg, R)
 
   // Tier color
-  const scoreColor = score >= 80 ? '#10b981' : score >= 60 ? '#f59e0b' : '#ef4444'
+  const scoreColor = score >= 80 ? '#10b981' : score >= 60 ? '#f59e0b' : '#ff5d3d'
   const tierLabel  = score >= 80 ? 'Healthy' : score >= 60 ? 'Warning' : 'Critical'
   const tierPill   = score >= 80
     ? 'text-emerald-700 bg-emerald-50 border-emerald-200'
@@ -162,27 +162,27 @@ function PostureGauge({ score = 83 }) {
       <svg width="144" height="120" viewBox="0 0 144 120">
         {/* Track */}
         <path d={trackPath} fill="none" stroke="#f3f4f6" strokeWidth="12" strokeLinecap="round" />
-        <path d={trackPath} fill="none" stroke="#e5e7eb" strokeWidth="10" strokeLinecap="round" />
+        <path d={trackPath} fill="none" stroke="#e6e6ec" strokeWidth="10" strokeLinecap="round" />
         {/* Fill with glow */}
         <path d={fillPath} fill="none" stroke={scoreColor} strokeWidth="10" strokeLinecap="round"
           style={{ filter: `drop-shadow(0 0 6px ${scoreColor}66)` }} />
         {/* Endpoint ticks */}
-        <circle cx={tx0} cy={ty0} r="4" fill="#e5e7eb" />
-        <circle cx={tx1} cy={ty1} r="4" fill="#e5e7eb" />
+        <circle cx={tx0} cy={ty0} r="4" fill="#e6e6ec" />
+        <circle cx={tx1} cy={ty1} r="4" fill="#e6e6ec" />
         {/* Center score */}
         <text x={cx} y={cy - 7} textAnchor="middle"
           style={{ fill: scoreColor, fontSize: 30, fontWeight: 900, fontFamily: 'inherit', letterSpacing: '-0.5px' }}>
           {score}
         </text>
         <text x={cx} y={cy + 11} textAnchor="middle"
-          style={{ fill: '#9ca3af', fontSize: 10, fontFamily: 'inherit' }}>
+          style={{ fill: '#9097a6', fontSize: 10, fontFamily: 'inherit' }}>
           /100
         </text>
         {/* "0" and "100" labels at arc endpoints */}
         <text x={tx0 - 4} y={ty0 + 14} textAnchor="middle"
-          style={{ fill: '#d1d5db', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>0</text>
+          style={{ fill: '#d3d4dd', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>0</text>
         <text x={tx1 + 4} y={ty1 + 14} textAnchor="middle"
-          style={{ fill: '#d1d5db', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>100</text>
+          style={{ fill: '#d3d4dd', fontSize: 8, fontFamily: 'inherit', fontWeight: 700 }}>100</text>
       </svg>
       <span className={cn('inline-flex items-center text-[10px] font-black px-2.5 py-1 rounded-full border tracking-[0.05em] -mt-3', tierPill)}>
         {tierLabel}
@@ -244,63 +244,71 @@ function SectionLabel({ children }) {
 
 function OverviewHero() {
   return (
-    <div className="relative border border-gray-200 rounded-2xl shadow-sm overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f5ff 60%, #eef2ff 100%)' }}>
+    <div className="relative border border-white/[0.08] rounded-3xl shadow-lg overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, #110b17 0%, #07010d 70%)' }}>
+      {/* Iris glow behind the posture panel */}
+      <div className="absolute pointer-events-none"
+        style={{
+          top: '-40%', right: '-6%', width: 560, height: 560, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(77,48,255,0.42) 0%, rgba(125,134,255,0.12) 45%, transparent 70%)',
+          filter: 'blur(30px)',
+        }} />
       {/* Dot-grid texture overlay */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, #c7d2fe 1px, transparent 1px)',
-          backgroundSize: '22px 22px',
-          opacity: 0.35,
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+          opacity: 0.12,
         }} />
-      {/* Gradient accent strip — 4px, wider spectrum */}
-      <div className="relative h-1 w-full bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500" />
+      {/* Gradient accent strip */}
+      <div className="relative h-px w-full bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
 
       <div className="relative px-8 py-8 flex items-center justify-between gap-10">
         {/* Left: branding + CTAs */}
         <div className="min-w-0 flex-1">
           {/* Eyebrow */}
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-sm">
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center shadow-sm"
+              style={{ background: 'var(--accent-gradient)' }}>
               <Shield size={13} className="text-white" strokeWidth={2.5} />
             </div>
-            <span className="text-[10.5px] font-black uppercase tracking-[0.14em] text-indigo-500">AISPM MVP v1</span>
-            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[9px] font-black text-emerald-700 tracking-wide">LIVE</span>
+            <span className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-blue-300">AISPM MVP v1</span>
+            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-400/30">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[9px] font-bold text-emerald-300 tracking-wide">LIVE</span>
             </div>
           </div>
 
-          <h1 className="text-[30px] font-black text-gray-900 leading-[1.1] tracking-tight">
+          <h1 className="font-display text-[40px] font-normal text-white leading-[1.05] tracking-[-0.04em]">
             Security Command Center
           </h1>
-          <p className="text-[13.5px] text-gray-500 mt-2 leading-relaxed max-w-[520px]">
+          <p className="text-[14px] text-white/55 mt-3 leading-relaxed max-w-[520px]">
             Real-time AI security posture across every agent, model, and data source — inventory, runtime, policies, and threat response unified.
           </p>
 
           {/* CTA row */}
-          <div className="flex items-center gap-2.5 mt-6">
+          <div className="flex flex-wrap items-center gap-2.5 mt-6">
             <NavLink to="/admin/simulation">
-              <Button className="h-9 gap-2 text-[12.5px] font-bold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-md shadow-blue-100 px-4">
+              <Button className="h-10 gap-2 text-[13px] font-semibold rounded-[14px] !bg-white hover:!bg-white/90 !text-void border-0 px-5">
                 <Play size={12} strokeWidth={2.5} />
                 Run Simulation
               </Button>
             </NavLink>
-            <Button variant="outline" className="h-9 gap-2 text-[12.5px] font-semibold text-gray-600 border-gray-200 bg-white/80 hover:bg-white">
+            <Button variant="outline" className="h-10 gap-2 text-[13px] font-medium rounded-[14px] text-white border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:text-white">
               <FileText size={12} strokeWidth={2} />
               Generate Report
             </Button>
             <NavLink to="/admin/settings">
-              <Button variant="outline" className="h-9 w-9 p-0 border-gray-200 bg-white/80 hover:bg-white">
-                <Settings size={14} className="text-gray-500" strokeWidth={1.75} />
+              <Button variant="outline" className="h-10 w-10 p-0 rounded-[14px] border-white/10 bg-white/[0.04] hover:bg-white/[0.08]">
+                <Settings size={14} className="text-white/70" strokeWidth={1.75} />
               </Button>
             </NavLink>
-            <span className="text-[10.5px] text-gray-400 ml-1">· Scanned 2 min ago</span>
+            <span className="text-[10.5px] text-white/40 ml-1 whitespace-nowrap">· Scanned 2 min ago</span>
           </div>
         </div>
 
         {/* Right: posture gauge — framed panel */}
-        <div className="shrink-0 flex flex-col items-center bg-white/70 border border-white rounded-2xl px-7 py-5 shadow-sm backdrop-blur-sm">
+        <div className="relative shrink-0 flex flex-col items-center bg-white rounded-3xl px-7 py-5 shadow-glow">
           <p className="text-[9.5px] font-black uppercase tracking-[0.14em] text-gray-400 mb-0.5">Overall Posture</p>
           <PostureGauge score={83} />
           <div className="flex items-center gap-1.5 mt-1.5">

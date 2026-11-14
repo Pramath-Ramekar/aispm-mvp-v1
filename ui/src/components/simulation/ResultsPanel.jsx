@@ -742,7 +742,7 @@ export function ResultsPanel({
                   <div className="relative h-3 rounded-full overflow-visible bg-gray-100">
                     <div
                       className="absolute inset-0 rounded-full overflow-hidden"
-                      style={{ background: 'linear-gradient(to right, #10b981 0%, #f59e0b 50%, #ef4444 85%, #dc2626 100%)' }}
+                      style={{ background: 'linear-gradient(to right, #10b981 0%, #f59e0b 50%, #ff5d3d 85%, #e8452a 100%)' }}
                     >
                       <div
                         className="absolute top-0 right-0 bottom-0 bg-gray-100 transition-all duration-700"

@@ -47,9 +47,9 @@ function indexToX(i, total) {
 }
 
 function riskColor(score) {
-  if (score >= 80) return '#ef4444'   // red-500
-  if (score >= 50) return '#f97316'   // orange-500
-  return '#22c55e'                    // green-500
+  if (score >= 80) return '#ff5d3d'   // red-500
+  if (score >= 50) return '#ff9e2c'   // orange-500
+  return '#25bb49'                    // green-500
 }
 
 export function RiskTrend({ events = [], live = false }) {
@@ -62,7 +62,7 @@ export function RiskTrend({ events = [], live = false }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#9ca3af',
+        color: '#9097a6',
         fontSize: 12,
       }}>
         No data yet
@@ -90,7 +90,7 @@ export function RiskTrend({ events = [], live = false }) {
         {/* Threshold lines */}
         <line
           x1={PAD_X} y1={scoreToY(80)} x2={CHART_W - PAD_X} y2={scoreToY(80)}
-          stroke="#fca5a5" strokeWidth={0.8} strokeDasharray="3 3"
+          stroke="#ff9d8a" strokeWidth={0.8} strokeDasharray="3 3"
         />
         <line
           x1={PAD_X} y1={scoreToY(50)} x2={CHART_W - PAD_X} y2={scoreToY(50)}
@@ -98,7 +98,7 @@ export function RiskTrend({ events = [], live = false }) {
         />
 
         {/* Threshold labels */}
-        <text x={PAD_X - 2} y={scoreToY(80) + 3} fontSize={7} fill="#ef4444" textAnchor="end">80</text>
+        <text x={PAD_X - 2} y={scoreToY(80) + 3} fontSize={7} fill="#ff5d3d" textAnchor="end">80</text>
         <text x={PAD_X - 2} y={scoreToY(50) + 3} fontSize={7} fill="#f59e0b" textAnchor="end">50</text>
 
         {/* Area fill under the line */}
@@ -151,10 +151,10 @@ export function RiskTrend({ events = [], live = false }) {
       </svg>
 
       {/* Legend */}
-      <div style={{ display: 'flex', gap: 12, fontSize: 10, color: '#9ca3af', marginTop: 4 }}>
-        <span style={{ color: '#ef4444' }}>── High (≥80)</span>
-        <span style={{ color: '#f97316' }}>── Med (≥50)</span>
-        <span style={{ color: '#22c55e' }}>── Low</span>
+      <div style={{ display: 'flex', gap: 12, fontSize: 10, color: '#9097a6', marginTop: 4 }}>
+        <span style={{ color: '#ff5d3d' }}>── High (≥80)</span>
+        <span style={{ color: '#ff9e2c' }}>── Med (≥50)</span>
+        <span style={{ color: '#25bb49' }}>── Low</span>
         {live && <span style={{ color: '#6366f1', marginLeft: 'auto' }}>● Live</span>}
       </div>
     </div>

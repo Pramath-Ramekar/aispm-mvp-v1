@@ -263,7 +263,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           fontWeight: 700,
           letterSpacing: '-0.04em',
           margin: 0,
-          color: '#0f172a',
+          color: '#12151c',
         }}>
           {isAgentMode ? agentBinding.name : 'AISPM'}
         </h1>
@@ -285,7 +285,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           alignItems: 'flex-end',
           gap: 10,
           background: '#ffffff',
-          border: '1.5px solid #e5e7eb',
+          border: '1.5px solid #e6e6ec',
           borderRadius: 30,
           padding: '14px 16px',
           boxShadow: '0 10px 35px rgba(0,0,0,0.06)',
@@ -329,9 +329,9 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
               height: 38,
               borderRadius: '50%',
               background: value.trim()
-                ? 'linear-gradient(135deg, #2563EB, #06B6D4)'
-                : '#e5e7eb',
-              color: value.trim() ? '#fff' : '#9ca3af',
+                ? 'linear-gradient(135deg, #4d30ff, #7d86ff)'
+                : '#e6e6ec',
+              color: value.trim() ? '#fff' : '#9097a6',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -346,7 +346,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span style={{ fontSize: 13, color: '#9ca3af' }}>Model:</span>
+        <span style={{ fontSize: 13, color: '#9097a6' }}>Model:</span>
         <select
           value={model}
           onChange={e => onModelChange(e.target.value)}
@@ -354,7 +354,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
             border: 'none',
             background: 'transparent',
             fontSize: 13,
-            color: '#374151',
+            color: '#373c4b',
             cursor: 'pointer',
             outline: 'none',
           }}
@@ -378,7 +378,7 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
           onClick={() => setDevOpen(!devOpen)}
           style={{
             fontSize: 12,
-            color: '#9ca3af',
+            color: '#9097a6',
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
@@ -393,15 +393,15 @@ function Landing({ onSend, model, models, onModelChange, inputRef, agentBinding 
             gap: 16,
             fontSize: 13,
             background: '#fff',
-            border: '1px solid #e5e7eb',
+            border: '1px solid #e6e6ec',
             borderRadius: 12,
             padding: '8px 14px',
             boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
           }}>
-            <a href="http://localhost:3000/" target="_blank" style={{ color: '#2563eb', textDecoration: 'none' }}>
+            <a href="http://localhost:3000/" target="_blank" style={{ color: '#4d30ff', textDecoration: 'none' }}>
               Grafana
             </a>
-            <a href="http://localhost:9090/" target="_blank" style={{ color: '#2563eb', textDecoration: 'none' }}>
+            <a href="http://localhost:9090/" target="_blank" style={{ color: '#4d30ff', textDecoration: 'none' }}>
               Prometheus
             </a>
           </div>
@@ -430,19 +430,27 @@ function LogoMark() {
         width: 320,
         height: 320,
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(37,99,235,0.35) 0%, rgba(6,182,212,0.22) 40%, transparent 75%)',
+        background: 'radial-gradient(circle, rgba(77, 48, 255,0.35) 0%, rgba(6,182,212,0.22) 40%, transparent 75%)',
         filter: 'blur(55px)',
       }} />
 
       <div style={{
         position: 'relative',
         zIndex: 2,
-        fontSize: 56,
-        fontWeight: 800,
-        letterSpacing: '-0.03em',
-        color: '#1d4ed8',
+        width: 84,
+        height: 84,
+        borderRadius: 26,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'var(--accent-gradient)',
+        color: '#fff',
+        fontFamily: 'var(--font-display)',
+        fontSize: 42,
+        fontWeight: 700,
+        boxShadow: '0 18px 48px rgba(77,48,255,0.45)',
       }}>
-        AISPM
+        A
       </div>
     </div>
   )

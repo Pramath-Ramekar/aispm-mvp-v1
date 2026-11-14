@@ -25,6 +25,13 @@ import Identity      from './admin/pages/Identity.jsx'
 import Data          from './admin/pages/Data.jsx'
 import Placeholder   from './admin/pages/Placeholder.jsx'
 import Settings      from './admin/pages/Settings.jsx'
+import '@fontsource/onest/400.css'
+import '@fontsource/onest/500.css'
+import '@fontsource/onest/600.css'
+import '@fontsource/onest/700.css'
+import '@fontsource/space-grotesk/400.css'
+import '@fontsource/space-grotesk/500.css'
+import '@fontsource/space-grotesk/700.css'
 import './index.css'
 
 /**

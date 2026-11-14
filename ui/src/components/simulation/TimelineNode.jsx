@@ -12,21 +12,21 @@
  */
 
 const STAGE_STYLE = {
-  blocked:     { bg: '#fef2f2', border: '#ef4444', dot: '#ef4444', label: 'BLOCKED'     },
-  allowed:     { bg: '#f0fdf4', border: '#22c55e', dot: '#22c55e', label: 'ALLOWED'     },
-  error:       { bg: '#fff7ed', border: '#f97316', dot: '#f97316', label: 'ERROR'       },
-  probe_error: { bg: '#fff7ed', border: '#f97316', dot: '#f97316', label: 'PROBE ERROR' },
-  started:     { bg: '#eff6ff', border: '#3b82f6', dot: '#3b82f6', label: 'START'       },
-  progress:    { bg: '#fafafa', border: '#d1d5db', dot: '#9ca3af', label: 'PROBE'       },
-  completed:   { bg: '#f9fafb', border: '#d1d5db', dot: '#9ca3af', label: 'DONE'        },
+  blocked:     { bg: '#fff1ee', border: '#ff5d3d', dot: '#ff5d3d', label: 'BLOCKED'     },
+  allowed:     { bg: '#f0fdf4', border: '#25bb49', dot: '#25bb49', label: 'ALLOWED'     },
+  error:       { bg: '#fff6ea', border: '#ff9e2c', dot: '#ff9e2c', label: 'ERROR'       },
+  probe_error: { bg: '#fff6ea', border: '#ff9e2c', dot: '#ff9e2c', label: 'PROBE ERROR' },
+  started:     { bg: '#f2f1ff', border: '#6247ff', dot: '#6247ff', label: 'START'       },
+  progress:    { bg: '#fafafa', border: '#d3d4dd', dot: '#9097a6', label: 'PROBE'       },
+  completed:   { bg: '#f7f7f9', border: '#d3d4dd', dot: '#9097a6', label: 'DONE'        },
 }
-const DEFAULT_STYLE = { bg: '#f9fafb', border: '#d1d5db', dot: '#9ca3af', label: '—' }
+const DEFAULT_STYLE = { bg: '#f7f7f9', border: '#d3d4dd', dot: '#9097a6', label: '—' }
 
 function riskColor(score) {
-  if (score == null) return '#9ca3af'
-  if (score >= 80) return '#ef4444'
-  if (score >= 50) return '#f97316'
-  return '#22c55e'
+  if (score == null) return '#9097a6'
+  if (score >= 80) return '#ff5d3d'
+  if (score >= 50) return '#ff9e2c'
+  return '#25bb49'
 }
 
 export function TimelineNode({ event, selected, onSelect, riskScore = null }) {
@@ -73,18 +73,18 @@ export function TimelineNode({ event, selected, onSelect, riskScore = null }) {
           )}
         </div>
 
-        <div style={{ fontSize: 12, color: '#374151', marginTop: 2, fontWeight: 500 }}>
+        <div style={{ fontSize: 12, color: '#373c4b', marginTop: 2, fontWeight: 500 }}>
           {event.event_type}
         </div>
 
         {event.details?.message && (
-          <div style={{ fontSize: 11, color: '#6b7280', marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: '#6b7384', marginTop: 2 }}>
             {event.details.message}
           </div>
         )}
 
         {event.details?.categories?.length > 0 && (
-          <div style={{ fontSize: 11, color: '#dc2626', marginTop: 2 }}>
+          <div style={{ fontSize: 11, color: '#e8452a', marginTop: 2 }}>
             {event.details.categories.join(', ')}
           </div>
         )}
@@ -103,7 +103,7 @@ export function TimelineNode({ event, selected, onSelect, riskScore = null }) {
             {riskScore}
           </span>
         )}
-        <span style={{ fontSize: 10, color: '#9ca3af', whiteSpace: 'nowrap' }}>
+        <span style={{ fontSize: 10, color: '#9097a6', whiteSpace: 'nowrap' }}>
           {event.timestamp ? new Date(event.timestamp).toLocaleTimeString() : ''}
         </span>
       </div>

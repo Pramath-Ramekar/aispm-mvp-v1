@@ -39,11 +39,11 @@ function replayPromptFromFinding(finding) {
 // ── Design tokens ──────────────────────────────────────────────────────────────
 
 const NODE_CFG = {
-  prompt:  { label: 'Prompt',    icon: MessageSquare, iconBg: 'bg-gray-100',    iconTxt: 'text-gray-500',    bg: 'bg-white',       border: 'border-gray-200',   accent: '#9ca3af', typeTxt: 'text-gray-500'    },
-  context: { label: 'Context',   icon: Layers,        iconBg: 'bg-blue-50',     iconTxt: 'text-blue-600',    bg: 'bg-white',       border: 'border-blue-100',   accent: '#60a5fa', typeTxt: 'text-blue-500'    },
+  prompt:  { label: 'Prompt',    icon: MessageSquare, iconBg: 'bg-gray-100',    iconTxt: 'text-gray-500',    bg: 'bg-white',       border: 'border-gray-200',   accent: '#9097a6', typeTxt: 'text-gray-500'    },
+  context: { label: 'Context',   icon: Layers,        iconBg: 'bg-blue-50',     iconTxt: 'text-blue-600',    bg: 'bg-white',       border: 'border-blue-100',   accent: '#7d86ff', typeTxt: 'text-blue-500'    },
   rag:     { label: 'RAG Data',  icon: FileText,      iconBg: 'bg-cyan-50',     iconTxt: 'text-cyan-600',    bg: 'bg-white',       border: 'border-cyan-100',   accent: '#22d3ee', typeTxt: 'text-cyan-500'    },
   model:   { label: 'LLM Model', icon: Cpu,           iconBg: 'bg-violet-50',   iconTxt: 'text-violet-600',  bg: 'bg-white',       border: 'border-violet-100', accent: '#a78bfa', typeTxt: 'text-violet-500'  },
-  tool:    { label: 'Tool Call', icon: Wrench,        iconBg: 'bg-indigo-50',   iconTxt: 'text-indigo-600',  bg: 'bg-white',       border: 'border-indigo-100', accent: '#818cf8', typeTxt: 'text-indigo-500'  },
+  tool:    { label: 'Tool Call', icon: Wrench,        iconBg: 'bg-indigo-50',   iconTxt: 'text-indigo-600',  bg: 'bg-white',       border: 'border-indigo-100', accent: '#7d86ff', typeTxt: 'text-indigo-500'  },
   policy:  { label: 'Policy',    icon: Shield,        iconBg: 'bg-amber-50',    iconTxt: 'text-amber-600',   bg: 'bg-amber-50/30', border: 'border-amber-200',  accent: '#fbbf24', typeTxt: 'text-amber-600'   },
   llm:     { label: 'LLM Call',  icon: Zap,           iconBg: 'bg-fuchsia-50',  iconTxt: 'text-fuchsia-600', bg: 'bg-white',       border: 'border-fuchsia-100',accent: '#e879f9', typeTxt: 'text-fuchsia-500' },
   output:  { label: 'Output',    icon: CheckCircle2,  iconBg: 'bg-emerald-50',  iconTxt: 'text-emerald-600', bg: 'bg-white',       border: 'border-emerald-100',accent: '#34d399', typeTxt: 'text-emerald-500' },
@@ -52,9 +52,9 @@ const NODE_CFG = {
 const RISK_VARIANT = { Critical: 'critical', High: 'high', Medium: 'medium', Low: 'low' }
 
 const EDGE_CFG = {
-  data:      { stroke: '#d1d5db', strokeHi: '#9ca3af', dash: null,       marker: 'm-data',      label: 'data flow'          },
-  sensitive: { stroke: '#fca5a5', strokeHi: '#f87171', dash: '5,3',      marker: 'm-sensitive', label: 'sensitive data'     },
-  tool:      { stroke: '#a5b4fc', strokeHi: '#818cf8', dash: null,       marker: 'm-tool',      label: 'tool invocation'    },
+  data:      { stroke: '#d3d4dd', strokeHi: '#9097a6', dash: null,       marker: 'm-data',      label: 'data flow'          },
+  sensitive: { stroke: '#ff9d8a', strokeHi: '#f87171', dash: '5,3',      marker: 'm-sensitive', label: 'sensitive data'     },
+  tool:      { stroke: '#a5b4fc', strokeHi: '#7d86ff', dash: null,       marker: 'm-tool',      label: 'tool invocation'    },
   policy:    { stroke: '#fcd34d', strokeHi: '#f59e0b', dash: null,       marker: 'm-policy',    label: 'policy evaluation'  },
   output:    { stroke: '#6ee7b7', strokeHi: '#34d399', dash: null,       marker: 'm-output',    label: 'gated output'       },
 }
@@ -82,8 +82,8 @@ function GraphNode({ node, selected, hovered, dimmed, onSelect, onHover, onLeave
   const Icon = cfg.icon
   const isRisky = node.risk === 'Critical' || node.risk === 'High'
   // For flagged/risky nodes the left accent uses the risk color; otherwise the type accent
-  const accentColor = node.risk === 'Critical' ? '#ef4444'
-                    : node.risk === 'High'     ? '#f97316'
+  const accentColor = node.risk === 'Critical' ? '#ff5d3d'
+                    : node.risk === 'High'     ? '#ff9e2c'
                     : cfg.accent
 
   return (
@@ -98,7 +98,7 @@ function GraphNode({ node, selected, hovered, dimmed, onSelect, onHover, onLeave
         width:  NW * 2,
         height: NH * 2,
         zIndex: selected ? 10 : hovered ? 8 : 1,
-        borderLeftColor: selected ? '#3b82f6' : accentColor,
+        borderLeftColor: selected ? '#6247ff' : accentColor,
         borderLeftWidth: 3,
       }}
       className={cn(
@@ -188,14 +188,14 @@ function LineageGraph({ selectedId, onSelect, nodes, edges, nodeEdges, cw, ch })
           <defs>
             {/* Dot-grid background pattern */}
             <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="1" cy="1" r="0.9" fill="#e5e7eb" />
+              <circle cx="1" cy="1" r="0.9" fill="#e6e6ec" />
             </pattern>
 
             {/* Arrowhead markers */}
             {[
-              { id: 'm-data',      fill: '#9ca3af' },
+              { id: 'm-data',      fill: '#9097a6' },
               { id: 'm-sensitive', fill: '#f87171' },
-              { id: 'm-tool',      fill: '#818cf8' },
+              { id: 'm-tool',      fill: '#7d86ff' },
               { id: 'm-policy',    fill: '#f59e0b' },
               { id: 'm-output',    fill: '#34d399' },
             ].map(m => (
@@ -223,7 +223,7 @@ function LineageGraph({ selectedId, onSelect, nodes, edges, nodeEdges, cw, ch })
                   y={22}
                   fontSize="9"
                   fontWeight="700"
-                  fill="#d1d5db"
+                  fill="#d3d4dd"
                   letterSpacing="0.08em"
                   textAnchor="middle"
                   style={{ userSelect: 'none' }}
@@ -992,8 +992,8 @@ export default function Lineage({ simEvents: simEventsProp } = {}) {
             {/* Legend */}
             <div className="flex items-center gap-3 text-[10px] text-gray-400 shrink-0">
               {[
-                { label: 'data flow',   color: '#d1d5db', dash: false },
-                { label: 'sensitive',   color: '#fca5a5', dash: true  },
+                { label: 'data flow',   color: '#d3d4dd', dash: false },
+                { label: 'sensitive',   color: '#ff9d8a', dash: true  },
                 { label: 'tool call',   color: '#a5b4fc', dash: false },
                 { label: 'policy',      color: '#fcd34d', dash: false },
               ].map(({ label, color, dash }) => (

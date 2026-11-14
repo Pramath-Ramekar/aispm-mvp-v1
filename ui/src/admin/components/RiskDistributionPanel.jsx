@@ -11,10 +11,10 @@
  */
 
 const SEGMENTS = [
-  { label: 'Critical', count: 2,  color: '#ef4444', textColor: 'text-red-500'    },
-  { label: 'High',     count: 4,  color: '#f97316', textColor: 'text-orange-500' },
+  { label: 'Critical', count: 2,  color: '#ff5d3d', textColor: 'text-red-500'    },
+  { label: 'High',     count: 4,  color: '#ff9e2c', textColor: 'text-orange-500' },
   { label: 'Medium',   count: 9,  color: '#eab308', textColor: 'text-yellow-500' },
-  { label: 'Low',      count: 12, color: '#22c55e', textColor: 'text-green-500'  },
+  { label: 'Low',      count: 12, color: '#25bb49', textColor: 'text-green-500'  },
 ]
 
 const TOTAL = SEGMENTS.reduce((s, r) => s + r.count, 0)
@@ -87,7 +87,7 @@ export default function RiskDistributionPanel() {
               x={CX} y={CY + 9}
               textAnchor="middle"
               fontSize="9" fontWeight="600"
-              fill="#9ca3af"
+              fill="#9097a6"
               letterSpacing="0.06em"
             >
               MODELS

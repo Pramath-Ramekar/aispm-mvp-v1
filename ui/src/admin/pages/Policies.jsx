@@ -887,13 +887,13 @@ function DetailPanel({ policy, onUpdate, onDelete, onDuplicate, toast }) {
       {/* ── TYPE ACCENT STRIP ── */}
       <div className={cn('h-[3px] shrink-0 rounded-t-xl', typeCfg.bg.replace('bg-', 'bg-').replace('-50', '-400').replace('50', '400'))}
         style={{ background: typeCfg.color.replace('text-', '').includes('violet') ? '#7c3aed'
-          : typeCfg.color.includes('blue')    ? '#2563eb'
+          : typeCfg.color.includes('blue')    ? '#4d30ff'
           : typeCfg.color.includes('cyan')    ? '#0891b2'
           : typeCfg.color.includes('emerald') ? '#059669'
           : typeCfg.color.includes('pink')    ? '#db2777'
           : typeCfg.color.includes('indigo')  ? '#4338ca'
           : typeCfg.color.includes('amber')   ? '#d97706'
-          : '#6b7280'
+          : '#6b7384'
         }}
       />
 

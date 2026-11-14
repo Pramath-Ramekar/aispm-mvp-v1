@@ -20,12 +20,12 @@ import { useState } from 'react'
 import { TimelineNode } from './TimelineNode.jsx'
 
 const PHASE_COLOR = {
-  'Recon':        '#3b82f6',
+  'Recon':        '#6247ff',
   'Injection':    '#8b5cf6',
-  'Exploitation': '#ef4444',
-  'Exfiltration': '#f97316',
-  'System':       '#6b7280',
-  'Other':        '#9ca3af',
+  'Exploitation': '#ff5d3d',
+  'Exfiltration': '#ff9e2c',
+  'System':       '#6b7384',
+  'Other':        '#9097a6',
 }
 
 function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
@@ -50,7 +50,7 @@ function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
           borderRadius: 4,
           cursor: 'pointer',
           fontSize: 11,
-          color: '#374151',
+          color: '#373c4b',
           fontWeight: 600,
         }}
       >
@@ -58,8 +58,8 @@ function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
         <span style={{ color: '#8b5cf6' }}>probe:</span>
         <span>{probe}</span>
         <span style={{ marginLeft: 'auto', display: 'flex', gap: 6, fontSize: 10, fontWeight: 400 }}>
-          {blockedCount > 0 && <span style={{ color: '#ef4444' }}>{blockedCount} blocked</span>}
-          {allowedCount > 0 && <span style={{ color: '#22c55e' }}>{allowedCount} allowed</span>}
+          {blockedCount > 0 && <span style={{ color: '#ff5d3d' }}>{blockedCount} blocked</span>}
+          {allowedCount > 0 && <span style={{ color: '#25bb49' }}>{allowedCount} allowed</span>}
         </span>
       </button>
 
@@ -82,7 +82,7 @@ function ProbeGroup({ probe, events, selectedId, onSelect, getRiskScore }) {
 
 export function PhaseSection({ phase, events, isGarak, selectedId, onSelect, getRiskScore }) {
   const [open, setOpen] = useState(true)
-  const color = PHASE_COLOR[phase] ?? '#9ca3af'
+  const color = PHASE_COLOR[phase] ?? '#9097a6'
 
   // Count events in this phase
   const eventCount = isGarak
@@ -112,10 +112,10 @@ export function PhaseSection({ phase, events, isGarak, selectedId, onSelect, get
         <span style={{ fontSize: 11, fontWeight: 700, color, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
           {phase}
         </span>
-        <span style={{ fontSize: 10, color: '#9ca3af', marginLeft: 4 }}>
+        <span style={{ fontSize: 10, color: '#9097a6', marginLeft: 4 }}>
           ({eventCount})
         </span>
-        <span style={{ marginLeft: 'auto', fontSize: 10, color: '#9ca3af' }}>
+        <span style={{ marginLeft: 'auto', fontSize: 10, color: '#9097a6' }}>
           {open ? '▾' : '▸'}
         </span>
       </button>

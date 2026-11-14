@@ -32,25 +32,49 @@ export default function LoginPage() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#f8fafc',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      position: 'relative',
+      overflow: 'hidden',
+      background: 'var(--void)',
+      fontFamily: 'var(--font-body)',
     }}>
+      <div aria-hidden="true" style={{
+        position: 'absolute', width: 720, height: 720, borderRadius: '50%',
+        top: '-18%', left: '50%', transform: 'translateX(-50%)',
+        background: 'radial-gradient(circle, rgba(77,48,255,0.38) 0%, rgba(125,134,255,0.12) 45%, transparent 70%)',
+        filter: 'blur(40px)',
+      }} />
+
       <div style={{
+        position: 'relative',
         width: '100%',
         maxWidth: 400,
-        background: '#fff',
-        border: '1px solid #e5e7eb',
-        borderRadius: 16,
-        padding: '40px 36px',
+        background: 'var(--glass)',
+        border: '1px solid var(--glass-border)',
+        borderRadius: 24,
+        padding: '44px 36px',
         textAlign: 'center',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.07)',
+        backdropFilter: 'blur(18px)',
+        boxShadow: '0 24px 80px rgba(0,0,0,0.5)',
       }}>
-        <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', letterSpacing: '-0.02em' }}>
+        <div style={{
+          width: 48, height: 48, margin: '0 auto 20px', borderRadius: 14,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'var(--accent-gradient)', color: '#fff',
+          fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700,
+          boxShadow: '0 8px 28px rgba(77,48,255,0.45)',
+        }}>
+          A
+        </div>
+
+        <h1 style={{
+          margin: 0, fontSize: '1.75rem', fontWeight: 500, color: '#fff',
+          letterSpacing: '-0.03em',
+        }}>
           AISPM MVP v1
         </h1>
 
         {!error && (
-          <p style={{ margin: '12px 0 0', fontSize: '0.875rem', color: '#64748b' }}>
+          <p style={{ margin: '12px 0 0', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>
             Redirecting to sign-in&hellip;
           </p>
         )}
@@ -59,8 +83,8 @@ export default function LoginPage() {
           <>
             <p style={{
               marginTop: 20, padding: '10px 14px',
-              background: '#fef2f2', border: '1px solid #fecaca',
-              borderRadius: 8, fontSize: '0.875rem', color: '#dc2626',
+              background: 'rgba(255,93,61,0.1)', border: '1px solid rgba(255,93,61,0.3)',
+              borderRadius: 12, fontSize: '0.875rem', color: '#ff9d8a',
               textAlign: 'left',
             }}>
               {error}
@@ -68,9 +92,9 @@ export default function LoginPage() {
             <button
               onClick={() => { setError(null); loginRedirect(returnTo).catch(e => setError(e.message)) }}
               style={{
-                marginTop: 16, padding: '11px 24px',
-                background: 'linear-gradient(135deg, #2563EB, #06B6D4)',
-                color: '#fff', border: 'none', borderRadius: 8,
+                marginTop: 16, padding: '12px 28px',
+                background: '#fff', color: '#07010d',
+                border: 'none', borderRadius: 14,
                 fontSize: '0.9375rem', fontWeight: 600, cursor: 'pointer',
               }}
             >
