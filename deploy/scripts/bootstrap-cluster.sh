@@ -1325,11 +1325,18 @@ if [ "$TARGET" = "all" ] || [ "$TARGET" = "addons" ]; then
   # ingress-nginx
   if [ "${SKIP_INGRESS:-0}" != "1" ]; then
     INGRESS_NGINX_VERSION="${INGRESS_NGINX_VERSION:-4.11.3}"
+    # kind has no LoadBalancer provider: a LoadBalancer Service never gets an
+    # external IP, so `helm --wait` would time out. Istio's gateway already
+    # exposes the host ports, so NodePort is enough there.
+    _ING_SVC_TYPE="LoadBalancer"
+    case "$(kubectl config current-context 2>/dev/null || true)" in
+      kind-*) _ING_SVC_TYPE="NodePort" ;;
+    esac
     bs_parallel "ingress-nginx" \
       helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
         -n ingress-nginx --create-namespace \
         --version "$INGRESS_NGINX_VERSION" \
-        --set controller.service.type=LoadBalancer \
+        --set controller.service.type="${INGRESS_SERVICE_TYPE:-$_ING_SVC_TYPE}" \
         --wait --timeout=5m
   fi
 

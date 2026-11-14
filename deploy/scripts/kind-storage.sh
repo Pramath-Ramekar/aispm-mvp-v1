@@ -155,20 +155,12 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: mc
-          image: quay.io/minio/mc:RELEASE.2024-11-21T17-21-54Z
+          image: cgr.dev/chainguard/minio-client:latest
           env:
             - name: MC_HOST_local
               value: http://${MINIO_ROOT_USER}:${MINIO_ROOT_PASSWORD}@minio.${MINIO_NAMESPACE}.svc.cluster.local:9000
-          command:
-            - sh
-            - -c
-            - |
-              for i in 1 2 3 4 5 6 7 8 9 10; do
-                if mc ls local >/dev/null 2>&1; then break; fi
-                echo "  waiting for MinIO API (attempt \$i)..."; sleep 5
-              done
-              mc mb --ignore-existing local/flink
-              mc ls local
+          command: ["mc"]
+          args: ["mb", "--ignore-existing", "local/flink"]
 EOF
   kubectl -n "$MINIO_NAMESPACE" wait --for=condition=complete \
     job/minio-init-buckets --timeout=120s || \
